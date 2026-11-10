@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 import type { UserRole } from '../types/navigation.ts';
 import { ROLE_META } from '../config/roles.ts';
 import { resolveNavEntry } from '../config/navigation/index.ts';
+import { MOCK_FULL_RESIDENTS } from '../mock/residentsData.ts';
 
 export interface BreadcrumbItem {
   label: string;
@@ -30,6 +31,37 @@ export function useBreadcrumbs(role: UserRole): BreadcrumbItem[] {
     }
 
     const crumbs: BreadcrumbItem[] = [root];
+
+    // Check if this is a resident detail route (e.g. /doctor/residents/:id, /caregiver/residents/:id, /admin/residents/:id)
+    const residentMatch = pathname.match(new RegExp(`^/${role}/residents/([^/]+)`));
+    if (residentMatch) {
+      const residentId = residentMatch[1];
+      const resident = MOCK_FULL_RESIDENTS.find((r) => r.id === residentId);
+      const residentName = resident ? resident.fullName : 'Resident Profile';
+
+      // For doctor: "Clinical > My Residents > Ashok Gokhale"
+      if (role === 'doctor') {
+        crumbs.push({ label: 'My Residents', href: entry.item.path });
+        crumbs.push({ label: residentName, current: true });
+        return crumbs;
+      }
+
+      // For caregiver: "Care Team > My Residents > Ashok Gokhale"
+      if (role === 'caregiver') {
+        crumbs.push({ label: entry.item.label, href: entry.item.path });
+        crumbs.push({ label: residentName, current: true });
+        return crumbs;
+      }
+
+      // For admin: "Administration > People & Care > Resident Management > Ashok Gokhale"
+      if (entry.group && entry.group.id !== 'overview') {
+        crumbs.push({ label: entry.group.label });
+      }
+      crumbs.push({ label: entry.item.label, href: entry.item.path });
+      crumbs.push({ label: residentName, current: true });
+      return crumbs;
+    }
+
     if (entry.group && entry.group.id !== 'overview') {
       crumbs.push({ label: entry.group.label });
     }

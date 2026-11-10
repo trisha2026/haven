@@ -20,7 +20,31 @@ import { AdminSettingsPage } from './pages/admin/AdminSettingsPage.tsx';
 import { AdminProfilePage } from './pages/admin/AdminProfilePage.tsx';
 import { AdminPreferencesPage } from './pages/admin/AdminPreferencesPage.tsx';
 import { CaregiverDashboardPage } from './pages/caregiver/CaregiverDashboardPage.tsx';
+import { CaregiverResidentsPage } from './pages/caregiver/CaregiverResidentsPage.tsx';
+import { CaregiverResidentProfilePage } from './pages/caregiver/CaregiverResidentProfilePage.tsx';
+import { CaregiverMedicationPage } from './pages/caregiver/CaregiverMedicationPage.tsx';
+import { CaregiverTasksPage } from './pages/caregiver/CaregiverTasksPage.tsx';
+import { CaregiverSchedulePage } from './pages/caregiver/CaregiverSchedulePage.tsx';
+import { CaregiverAttendancePage } from './pages/caregiver/CaregiverAttendancePage.tsx';
+import { CaregiverLeavePage } from './pages/caregiver/CaregiverLeavePage.tsx';
+import { CaregiverInventoryPage } from './pages/caregiver/CaregiverInventoryPage.tsx';
+import { CaregiverAssignmentsPage } from './pages/caregiver/CaregiverAssignmentsPage.tsx';
+import { CaregiverNotificationsPage } from './pages/caregiver/CaregiverNotificationsPage.tsx';
+import { CaregiverProfilePage } from './pages/caregiver/CaregiverProfilePage.tsx';
+import { CaregiverPreferencesPage } from './pages/caregiver/CaregiverPreferencesPage.tsx';
+import { CaregiverHandoverPage } from './pages/caregiver/CaregiverHandoverPage.tsx';
 import { DoctorDashboardPage } from './pages/doctor/DoctorDashboardPage.tsx';
+import { DoctorResidentsPage } from './pages/doctor/DoctorResidentsPage.tsx';
+import { DoctorResidentProfilePage } from './pages/doctor/DoctorResidentProfilePage.tsx';
+import { DoctorMedicalRecordsPage } from './pages/doctor/DoctorMedicalRecordsPage.tsx';
+import { DoctorPrescriptionsPage } from './pages/doctor/DoctorPrescriptionsPage.tsx';
+import { DoctorClinicalNotesPage } from './pages/doctor/DoctorClinicalNotesPage.tsx';
+import { DoctorIncidentsPage } from './pages/doctor/DoctorIncidentsPage.tsx';
+import { DoctorAccessRequestsPage } from './pages/doctor/DoctorAccessRequestsPage.tsx';
+import { DoctorTasksPage } from './pages/doctor/DoctorTasksPage.tsx';
+import { DoctorNotificationsPage } from './pages/doctor/DoctorNotificationsPage.tsx';
+import { DoctorProfilePage } from './pages/doctor/DoctorProfilePage.tsx';
+import { DoctorPreferencesPage } from './pages/doctor/DoctorPreferencesPage.tsx';
 import { PlaceholderPage } from './pages/PlaceholderPage.tsx';
 import { DesignSystemPage } from './pages/DesignSystemPage.tsx';
 import { NotFoundPage } from './pages/NotFoundPage.tsx';
@@ -76,18 +100,19 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="/caregiver/dashboard" replace /> },
       { path: 'dashboard', element: <CaregiverDashboardPage /> },
-      { path: 'residents', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'medications', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'tasks', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'schedule', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'attendance', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'leave', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'inventory', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'assignments', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'notifications', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'profile', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'preferences', element: <PlaceholderPage role="caregiver" /> },
-      { path: 'handover', element: <PlaceholderPage role="caregiver" /> },
+      { path: 'residents', element: <CaregiverResidentsPage /> },
+      { path: 'residents/:id', element: <CaregiverResidentProfilePage /> },
+      { path: 'medications', element: <CaregiverMedicationPage /> },
+      { path: 'tasks', element: <CaregiverTasksPage /> },
+      { path: 'schedule', element: <CaregiverSchedulePage /> },
+      { path: 'attendance', element: <CaregiverAttendancePage /> },
+      { path: 'leave', element: <CaregiverLeavePage /> },
+      { path: 'inventory', element: <CaregiverInventoryPage /> },
+      { path: 'assignments', element: <CaregiverAssignmentsPage /> },
+      { path: 'notifications', element: <CaregiverNotificationsPage /> },
+      { path: 'profile', element: <CaregiverProfilePage /> },
+      { path: 'preferences', element: <CaregiverPreferencesPage /> },
+      { path: 'handover', element: <CaregiverHandoverPage /> },
       { path: '*', element: <PlaceholderPage role="caregiver" /> },
     ],
   },
@@ -99,16 +124,19 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="/doctor/dashboard" replace /> },
       { path: 'dashboard', element: <DoctorDashboardPage /> },
-      { path: 'residents', element: <PlaceholderPage role="doctor" /> },
-      { path: 'records', element: <PlaceholderPage role="doctor" /> },
-      { path: 'prescriptions', element: <PlaceholderPage role="doctor" /> },
-      { path: 'notes', element: <PlaceholderPage role="doctor" /> },
-      { path: 'incidents', element: <PlaceholderPage role="doctor" /> },
-      { path: 'access-requests', element: <PlaceholderPage role="doctor" /> },
-      { path: 'tasks', element: <PlaceholderPage role="doctor" /> },
-      { path: 'notifications', element: <PlaceholderPage role="doctor" /> },
-      { path: 'profile', element: <PlaceholderPage role="doctor" /> },
-      { path: 'preferences', element: <PlaceholderPage role="doctor" /> },
+      { path: 'residents', element: <DoctorResidentsPage /> },
+      { path: 'residents/:id', element: <DoctorResidentProfilePage /> },
+      { path: 'records', element: <DoctorMedicalRecordsPage /> },
+      { path: 'medical-records', element: <Navigate to="/doctor/records" replace /> },
+      { path: 'prescriptions', element: <DoctorPrescriptionsPage /> },
+      { path: 'notes', element: <DoctorClinicalNotesPage /> },
+      { path: 'clinical-notes', element: <Navigate to="/doctor/notes" replace /> },
+      { path: 'incidents', element: <DoctorIncidentsPage /> },
+      { path: 'access-requests', element: <DoctorAccessRequestsPage /> },
+      { path: 'tasks', element: <DoctorTasksPage /> },
+      { path: 'notifications', element: <DoctorNotificationsPage /> },
+      { path: 'profile', element: <DoctorProfilePage /> },
+      { path: 'preferences', element: <DoctorPreferencesPage /> },
       { path: '*', element: <PlaceholderPage role="doctor" /> },
     ],
   },

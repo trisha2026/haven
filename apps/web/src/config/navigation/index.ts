@@ -50,12 +50,15 @@ export function resolveNavEntry(role: UserRole, pathname: string): ResolvedNavEn
   const hidden = navigation.hidden.find((candidate) => candidate.path === path);
   if (hidden) return { item: hidden };
 
-  // Match nested resource paths (e.g. /admin/residents/RES-044) to parent nav item
+  // Match nested resource paths (e.g. /admin/residents/RES-044, /doctor/residents/RES-004) to parent nav item
   if (path.startsWith(`/${role}/residents/`)) {
-    const residentsGroup = navigation.groups.find((g) => g.id === 'people');
-    const residentsItem = residentsGroup?.items.find((i) => i.id === 'residents');
-    if (residentsItem && residentsGroup) {
-      return { item: residentsItem, group: residentsGroup };
+    for (const group of navigation.groups) {
+      const residentsItem = group.items.find(
+        (i) => i.id === 'residents' || i.path === `/${role}/residents`
+      );
+      if (residentsItem) {
+        return { item: residentsItem, group };
+      }
     }
   }
 
