@@ -2,7 +2,7 @@ import React from 'react';
 import { Loader2 } from 'lucide-react';
 import { cn } from '../../utils/cn.ts';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'subtle';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'subtle' | 'default';
 export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -39,6 +39,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const variants: Record<ButtonVariant, string> = {
       // Primary: #2457C5 with white accessible text
       primary:
+        'bg-haven-blue-700 text-white shadow-sm hover:bg-haven-navy-900 active:bg-haven-navy-900 ' +
+        'border border-haven-blue-700',
+
+      default:
         'bg-haven-blue-700 text-white shadow-sm hover:bg-haven-navy-900 active:bg-haven-navy-900 ' +
         'border border-haven-blue-700',
       

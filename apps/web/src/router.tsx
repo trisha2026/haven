@@ -3,6 +3,22 @@ import { AdminLayout, CaregiverLayout, DoctorLayout } from './layouts/index.ts';
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage.tsx';
 import { AdminResidentsPage } from './pages/admin/AdminResidentsPage.tsx';
 import { AdminResidentProfilePage } from './pages/admin/AdminResidentProfilePage.tsx';
+import { AdminRoomsBedsPage } from './pages/admin/AdminRoomsBedsPage.tsx';
+import { AdminCaregiversPage } from './pages/admin/AdminCaregiversPage.tsx';
+import { AdminDoctorsPage } from './pages/admin/AdminDoctorsPage.tsx';
+import { AdminMedicationOversightPage } from './pages/admin/AdminMedicationOversightPage.tsx';
+import { AdminPharmacyInventoryPage } from './pages/admin/AdminPharmacyInventoryPage.tsx';
+import { AdminAttendanceShiftsPage } from './pages/admin/AdminAttendanceShiftsPage.tsx';
+import { AdminLeaveManagementPage } from './pages/admin/AdminLeaveManagementPage.tsx';
+import { AdminEmergencyAssignmentsPage } from './pages/admin/AdminEmergencyAssignmentsPage.tsx';
+import { AdminIncidentManagementPage } from './pages/admin/AdminIncidentManagementPage.tsx';
+import { AdminDoctorAccessRequestsPage } from './pages/admin/AdminDoctorAccessRequestsPage.tsx';
+import { AdminNotificationsPage } from './pages/admin/AdminNotificationsPage.tsx';
+import { AdminReportsAnalyticsPage } from './pages/admin/AdminReportsAnalyticsPage.tsx';
+import { AdminAuditTrailPage } from './pages/admin/AdminAuditTrailPage.tsx';
+import { AdminSettingsPage } from './pages/admin/AdminSettingsPage.tsx';
+import { AdminProfilePage } from './pages/admin/AdminProfilePage.tsx';
+import { AdminPreferencesPage } from './pages/admin/AdminPreferencesPage.tsx';
 import { CaregiverDashboardPage } from './pages/caregiver/CaregiverDashboardPage.tsx';
 import { DoctorDashboardPage } from './pages/doctor/DoctorDashboardPage.tsx';
 import { PlaceholderPage } from './pages/PlaceholderPage.tsx';
@@ -31,22 +47,24 @@ export const router = createBrowserRouter([
       { path: 'dashboard', element: <AdminDashboardPage /> },
       { path: 'residents', element: <AdminResidentsPage /> },
       { path: 'residents/:id', element: <AdminResidentProfilePage /> },
-      { path: 'caregivers', element: <PlaceholderPage role="admin" /> },
-      { path: 'doctors', element: <PlaceholderPage role="admin" /> },
-      { path: 'rooms', element: <PlaceholderPage role="admin" /> },
-      { path: 'medications', element: <PlaceholderPage role="admin" /> },
-      { path: 'pharmacy', element: <PlaceholderPage role="admin" /> },
-      { path: 'attendance', element: <PlaceholderPage role="admin" /> },
-      { path: 'leave-requests', element: <PlaceholderPage role="admin" /> },
-      { path: 'emergency-assignments', element: <PlaceholderPage role="admin" /> },
-      { path: 'incidents', element: <PlaceholderPage role="admin" /> },
-      { path: 'access-requests', element: <PlaceholderPage role="admin" /> },
-      { path: 'notifications', element: <PlaceholderPage role="admin" /> },
-      { path: 'reports', element: <PlaceholderPage role="admin" /> },
-      { path: 'audit-trail', element: <PlaceholderPage role="admin" /> },
-      { path: 'settings', element: <PlaceholderPage role="admin" /> },
-      { path: 'profile', element: <PlaceholderPage role="admin" /> },
-      { path: 'preferences', element: <PlaceholderPage role="admin" /> },
+      { path: 'caregivers', element: <AdminCaregiversPage /> },
+      { path: 'doctors', element: <AdminDoctorsPage /> },
+      { path: 'rooms', element: <AdminRoomsBedsPage /> },
+      { path: 'medications', element: <AdminMedicationOversightPage /> },
+      { path: 'pharmacy', element: <AdminPharmacyInventoryPage /> },
+      { path: 'attendance', element: <AdminAttendanceShiftsPage /> },
+      { path: 'leave-requests', element: <AdminLeaveManagementPage /> },
+      { path: 'leave', element: <Navigate to="/admin/leave-requests" replace /> },
+      { path: 'emergency-assignments', element: <AdminEmergencyAssignmentsPage /> },
+      { path: 'incidents', element: <AdminIncidentManagementPage /> },
+      { path: 'access-requests', element: <AdminDoctorAccessRequestsPage /> },
+      { path: 'doctor-access', element: <Navigate to="/admin/access-requests" replace /> },
+      { path: 'notifications', element: <AdminNotificationsPage /> },
+      { path: 'reports', element: <AdminReportsAnalyticsPage /> },
+      { path: 'audit-trail', element: <AdminAuditTrailPage /> },
+      { path: 'settings', element: <AdminSettingsPage /> },
+      { path: 'profile', element: <AdminProfilePage /> },
+      { path: 'preferences', element: <AdminPreferencesPage /> },
       { path: '*', element: <PlaceholderPage role="admin" /> },
     ],
   },
