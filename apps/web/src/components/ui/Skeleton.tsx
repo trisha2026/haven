@@ -29,7 +29,7 @@ export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
         aria-hidden="true"
         style={inlineStyles}
         className={cn(
-          'animate-pulse bg-haven-greige/50',
+          'animate-pulse bg-haven-border/70',
           variants[variant],
           className
         )}

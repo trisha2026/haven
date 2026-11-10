@@ -68,8 +68,8 @@ export function Tooltip({ content, side = 'right', disabled = false, className, 
             aria-hidden="true"
             style={{ top: position.top, left: position.left }}
             className={cn(
-              'pointer-events-none fixed z-[80] whitespace-nowrap rounded-md bg-haven-charcoal px-2.5 py-1.5',
-              'text-xs font-medium text-haven-offwhite shadow-haven-popover animate-fade-in',
+              'pointer-events-none fixed z-[80] whitespace-nowrap rounded-md bg-haven-slate-900 px-2.5 py-1.5',
+              'text-xs font-medium text-white shadow-haven-popover animate-fade-in',
               side === 'right' ? '-translate-y-1/2' : '-translate-x-1/2'
             )}
           >

@@ -125,7 +125,7 @@ function SearchModal({ role, onClose }: SearchModalProps) {
     <div className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-6 md:p-20" role="presentation">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-haven-charcoal/40 backdrop-blur-xs transition-opacity animate-fade-in"
+        className="fixed inset-0 bg-haven-slate-900/40 backdrop-blur-xs transition-opacity animate-fade-in"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -137,14 +137,14 @@ function SearchModal({ role, onClose }: SearchModalProps) {
         aria-modal="true"
         aria-label="Global Search"
         className={cn(
-          'relative w-full max-w-2xl bg-haven-cream rounded-2xl border border-haven-border shadow-haven-modal',
-          'flex flex-col overflow-hidden text-haven-charcoal animate-scale-in focus:outline-none'
+          'relative w-full max-w-2xl bg-white rounded-2xl border border-haven-border shadow-haven-modal',
+          'flex flex-col overflow-hidden text-haven-slate-900 animate-scale-in focus:outline-none'
         )}
         onKeyDown={handleKeyDown}
       >
         {/* Search Input Bar */}
         <div className="relative flex items-center border-b border-haven-border px-4 py-3 sm:px-5">
-          <Search className="w-5 h-5 text-haven-taupe shrink-0 mr-3" aria-hidden="true" />
+          <Search className="w-5 h-5 text-haven-slate-500 shrink-0 mr-3" aria-hidden="true" />
           <input
             ref={inputRef}
             type="text"
@@ -154,7 +154,7 @@ function SearchModal({ role, onClose }: SearchModalProps) {
             value={query}
             onChange={(e) => handleQueryChange(e.target.value)}
             placeholder="Search residents, wings, staff, modules, protocols..."
-            className="w-full bg-transparent text-haven-charcoal placeholder:text-haven-charcoal-muted/60 text-base focus:outline-none"
+            className="w-full bg-transparent text-haven-slate-900 placeholder:text-haven-slate-500/60 text-base focus:outline-none"
           />
           {query ? (
             <button
@@ -163,13 +163,13 @@ function SearchModal({ role, onClose }: SearchModalProps) {
                 handleQueryChange('');
                 inputRef.current?.focus();
               }}
-              className="p-1 rounded-md text-haven-charcoal-muted hover:text-haven-charcoal hover:bg-haven-greige-soft transition-colors mr-2 cursor-pointer"
+              className="p-1 rounded-md text-haven-slate-500 hover:text-haven-slate-900 hover:bg-haven-slate-100 transition-colors mr-2 cursor-pointer"
               aria-label="Clear search input"
             >
               <X className="w-4 h-4" />
             </button>
           ) : null}
-          <kbd className="hidden sm:inline-flex items-center px-2 py-0.5 text-[11px] font-mono font-medium text-haven-charcoal-muted bg-haven-offwhite border border-haven-border rounded">
+          <kbd className="hidden sm:inline-flex items-center px-2 py-0.5 text-[11px] font-mono font-medium text-haven-slate-500 bg-haven-slate-50 border border-haven-border rounded">
             ESC
           </kbd>
         </div>
@@ -179,8 +179,8 @@ function SearchModal({ role, onClose }: SearchModalProps) {
           {/* Empty query: Show Suggestions & Quick Prompts */}
           {!query.trim() && (
             <div className="space-y-4 py-2">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-haven-charcoal-muted">
-                <Sparkles className="w-3.5 h-3.5 text-haven-mocha" />
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-haven-slate-500">
+                <Sparkles className="w-3.5 h-3.5 text-haven-blue-700" />
                 <span>Suggested Searches for your role</span>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -192,7 +192,7 @@ function SearchModal({ role, onClose }: SearchModalProps) {
                       handleQueryChange(suggestion);
                       inputRef.current?.focus();
                     }}
-                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-haven-offwhite border border-haven-border text-haven-charcoal hover:bg-haven-greige-soft hover:border-haven-taupe transition-colors cursor-pointer"
+                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-haven-slate-50 border border-haven-border text-haven-slate-700 hover:bg-haven-blue-100 hover:border-haven-blue-500/40 hover:text-haven-blue-700 transition-colors cursor-pointer"
                   >
                     {suggestion}
                   </button>
@@ -200,7 +200,7 @@ function SearchModal({ role, onClose }: SearchModalProps) {
               </div>
 
               <div className="pt-4 border-t border-haven-border-light">
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-haven-charcoal-muted mb-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-haven-slate-500 mb-2">
                   Quick Navigation
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -211,14 +211,14 @@ function SearchModal({ role, onClose }: SearchModalProps) {
                         key={item.id}
                         type="button"
                         onClick={() => handleSelect(item)}
-                        className="flex items-center gap-3 p-2.5 rounded-xl border border-haven-border-light bg-haven-offwhite/60 hover:bg-haven-greige-soft text-left transition-colors cursor-pointer group"
+                        className="flex items-center gap-3 p-2.5 rounded-xl border border-haven-border-light bg-haven-slate-50/60 hover:bg-haven-blue-50/70 text-left transition-colors cursor-pointer group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-haven-greige-soft text-haven-mocha flex items-center justify-center shrink-0 group-hover:bg-haven-mocha group-hover:text-haven-offwhite transition-colors">
+                        <div className="w-8 h-8 rounded-lg bg-haven-slate-100 text-haven-slate-700 flex items-center justify-center shrink-0 group-hover:bg-haven-blue-700 group-hover:text-white transition-colors">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div className="min-w-0 flex-1">
-                          <p className="text-sm font-semibold text-haven-charcoal truncate">{item.title}</p>
-                          <p className="text-xs text-haven-charcoal-muted truncate">{item.subtitle}</p>
+                          <p className="text-sm font-semibold text-haven-slate-900 truncate">{item.title}</p>
+                          <p className="text-xs text-haven-slate-500 truncate">{item.subtitle}</p>
                         </div>
                       </button>
                     );
@@ -233,7 +233,7 @@ function SearchModal({ role, onClose }: SearchModalProps) {
             <div className="space-y-4">
               {groupedResults.map((group) => (
                 <div key={group.type} className="space-y-1.5">
-                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-haven-taupe-dark px-2">
+                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-haven-slate-500 px-2">
                     {SEARCH_TYPE_LABELS[group.type]}
                   </h4>
                   <div className="space-y-1">
@@ -252,8 +252,8 @@ function SearchModal({ role, onClose }: SearchModalProps) {
                           className={cn(
                             'flex items-center justify-between gap-3 p-3 rounded-xl cursor-pointer transition-colors text-left',
                             isSelected
-                              ? 'bg-haven-greige-soft text-haven-charcoal shadow-haven-sm'
-                              : 'hover:bg-haven-greige-soft/60 text-haven-charcoal-light'
+                              ? 'bg-haven-blue-100 text-haven-slate-900 shadow-haven-sm'
+                              : 'hover:bg-haven-slate-100 text-haven-slate-700'
                           )}
                         >
                           <div className="flex items-center gap-3 min-w-0">
@@ -261,23 +261,23 @@ function SearchModal({ role, onClose }: SearchModalProps) {
                               className={cn(
                                 'w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors',
                                 isSelected
-                                  ? 'bg-haven-mocha text-haven-offwhite'
-                                  : 'bg-haven-greige/50 text-haven-charcoal-muted'
+                                  ? 'bg-haven-blue-700 text-white'
+                                  : 'bg-haven-slate-100 text-haven-slate-500'
                               )}
                             >
                               <Icon className="w-4 h-4" />
                             </div>
                             <div className="min-w-0">
-                              <p className="text-sm font-medium text-haven-charcoal truncate">
+                              <p className="text-sm font-medium text-haven-slate-900 truncate">
                                 {result.title}
                               </p>
-                              <p className="text-xs text-haven-charcoal-muted truncate">
+                              <p className="text-xs text-haven-slate-500 truncate">
                                 {result.subtitle}
                               </p>
                             </div>
                           </div>
                           {isSelected && (
-                            <CornerDownLeft className="w-4 h-4 text-haven-mocha shrink-0 mr-1" />
+                            <CornerDownLeft className="w-4 h-4 text-haven-blue-700 shrink-0 mr-1" />
                           )}
                         </div>
                       );
@@ -291,13 +291,13 @@ function SearchModal({ role, onClose }: SearchModalProps) {
           {/* Empty search results */}
           {query.trim() && groupedResults.length === 0 && (
             <div className="py-12 text-center space-y-2">
-              <div className="w-12 h-12 rounded-full bg-haven-greige-soft text-haven-taupe flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-haven-slate-100 text-haven-slate-500 flex items-center justify-center mx-auto">
                 <Search className="w-6 h-6" />
               </div>
-              <p className="text-sm font-semibold text-haven-charcoal">
+              <p className="text-sm font-semibold text-haven-slate-900">
                 No results found for &ldquo;{query}&rdquo;
               </p>
-              <p className="text-xs text-haven-charcoal-muted max-w-xs mx-auto">
+              <p className="text-xs text-haven-slate-500 max-w-xs mx-auto">
                 Try searching for resident names, room numbers, medication protocols, or staff members.
               </p>
             </div>
@@ -305,19 +305,19 @@ function SearchModal({ role, onClose }: SearchModalProps) {
         </div>
 
         {/* Footer shortcuts */}
-        <div className="flex items-center justify-between border-t border-haven-border bg-haven-offwhite/80 px-4 py-2.5 text-xs text-haven-charcoal-muted">
+        <div className="flex items-center justify-between border-t border-haven-border bg-haven-slate-50/80 px-4 py-2.5 text-xs text-haven-slate-500">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 rounded bg-haven-cream border border-haven-border font-mono text-[10px]">
+              <kbd className="px-1.5 py-0.5 rounded bg-white border border-haven-border font-mono text-[10px] text-haven-slate-700">
                 <ArrowUp className="w-2.5 h-2.5 inline" />
               </kbd>
-              <kbd className="px-1.5 py-0.5 rounded bg-haven-cream border border-haven-border font-mono text-[10px]">
+              <kbd className="px-1.5 py-0.5 rounded bg-white border border-haven-border font-mono text-[10px] text-haven-slate-700">
                 <ArrowDown className="w-2.5 h-2.5 inline" />
               </kbd>
               <span className="ml-1">Navigate</span>
             </span>
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 rounded bg-haven-cream border border-haven-border font-mono text-[10px]">
+              <kbd className="px-1.5 py-0.5 rounded bg-white border border-haven-border font-mono text-[10px] text-haven-slate-700">
                 ↵
               </kbd>
               <span className="ml-1">Select</span>

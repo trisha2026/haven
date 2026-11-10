@@ -32,39 +32,39 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-200 select-none cursor-pointer ' +
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-mocha/40 focus-visible:ring-offset-2 focus-visible:ring-offset-haven-offwhite ' +
+      'inline-flex items-center justify-center font-medium transition-all duration-150 select-none cursor-pointer ' +
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue-700/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white ' +
       'disabled:pointer-events-none disabled:opacity-50 active:scale-[0.985]';
 
     const variants: Record<ButtonVariant, string> = {
-      // Primary: Rich Mocha background with off-white text - warm, authoritative yet welcoming
+      // Primary: #2457C5 with white accessible text
       primary:
-        'bg-haven-mocha text-haven-offwhite shadow-sm hover:bg-haven-mocha-dark active:bg-haven-charcoal ' +
-        'border border-haven-mocha-dark/20',
+        'bg-haven-blue-700 text-white shadow-sm hover:bg-haven-navy-900 active:bg-haven-navy-900 ' +
+        'border border-haven-blue-700',
       
-      // Secondary: Soft taupe background with charcoal text
+      // Secondary: #E4EDFF with #2457C5 text
       secondary:
-        'bg-haven-greige/60 text-haven-charcoal hover:bg-haven-greige hover:text-haven-charcoal-dark ' +
-        'border border-haven-greige active:bg-haven-taupe/30',
+        'bg-haven-blue-100 text-haven-blue-700 hover:bg-haven-blue-100/80 active:bg-haven-blue-100 ' +
+        'border border-haven-blue-100',
 
-      // Outline: Greige border with charcoal text on clean surface
+      // Outline: white surface, #E6ECF4 border, slate-700 text
       outline:
-        'bg-transparent text-haven-charcoal border border-haven-border hover:bg-haven-greige/40 ' +
-        'hover:border-haven-taupe active:bg-haven-greige/60',
+        'bg-white text-haven-slate-700 border border-haven-border hover:bg-haven-slate-50 ' +
+        'hover:text-haven-slate-900 hover:border-haven-blue-500/40 active:bg-haven-slate-100',
 
-      // Ghost: Borderless, lightweight action
+      // Ghost: borderless, slate text
       ghost:
-        'bg-transparent text-haven-charcoal hover:bg-haven-greige/40 hover:text-haven-charcoal-dark active:bg-haven-greige/60',
+        'bg-transparent text-haven-slate-700 hover:bg-haven-slate-100 hover:text-haven-slate-900 active:bg-haven-blue-100/50',
 
-      // Danger: Soft yet distinct warm brick/crimson
+      // Danger / Critical: #C84D45 with white text
       danger:
         'bg-haven-danger text-white shadow-sm hover:bg-haven-danger/90 active:bg-haven-danger ' +
         'focus-visible:ring-haven-danger/40',
 
-      // Subtle: Off-white / Cream elevated tile
+      // Subtle: white surface, #E6ECF4 border, slate-700 text
       subtle:
-        'bg-haven-cream text-haven-charcoal border border-haven-border-light shadow-haven-sm ' +
-        'hover:border-haven-border hover:bg-haven-offwhite',
+        'bg-white text-haven-slate-700 border border-haven-border shadow-haven-sm ' +
+        'hover:border-haven-blue-500/40 hover:bg-haven-slate-50',
     };
 
     const sizes: Record<ButtonSize, string> = {

@@ -59,7 +59,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="text-xs font-semibold uppercase tracking-wider text-haven-charcoal-muted flex items-center gap-1"
+            className="text-xs font-semibold uppercase tracking-wider text-haven-slate-500 flex items-center gap-1"
           >
             <span>{label}</span>
             {required && <span className="text-haven-danger font-bold">*</span>}
@@ -68,7 +68,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
 
         <div className="relative flex items-center w-full">
           {leftIcon && (
-            <div className="absolute left-3 flex items-center pointer-events-none text-haven-charcoal-muted">
+            <div className="absolute left-3 flex items-center pointer-events-none text-haven-slate-500">
               {leftIcon}
             </div>
           )}
@@ -83,15 +83,15 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
               hasError ? errorId : helperText ? helperId : undefined
             }
             className={cn(
-              'w-full appearance-none bg-haven-cream text-haven-charcoal cursor-pointer',
+              'w-full appearance-none bg-white text-haven-slate-900 cursor-pointer',
               'border transition-colors duration-150',
-              'focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-haven-offwhite',
-              'disabled:bg-haven-greige-soft/60 disabled:text-haven-charcoal-muted/70 disabled:cursor-not-allowed',
+              'focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-white',
+              'disabled:bg-haven-slate-50 disabled:text-haven-slate-500/70 disabled:cursor-not-allowed',
               sizes[selectSize],
               leftIcon ? (selectSize === 'sm' ? 'pl-8' : selectSize === 'lg' ? 'pl-11' : 'pl-10') : '',
               hasError
-                ? 'border-haven-danger text-haven-charcoal focus:border-haven-danger focus:ring-haven-danger/30'
-                : 'border-haven-border hover:border-haven-taupe focus:border-haven-mocha focus:ring-haven-mocha/30',
+                ? 'border-haven-danger text-haven-slate-900 focus:border-haven-danger focus:ring-haven-danger/30'
+                : 'border-haven-border hover:border-haven-blue-500/40 focus:border-haven-blue-700 focus:ring-haven-blue-700/25',
               className
             )}
             {...props}
@@ -110,7 +110,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
               : children}
           </select>
 
-          <div className="absolute right-3 flex items-center pointer-events-none text-haven-charcoal-muted">
+          <div className="absolute right-3 flex items-center pointer-events-none text-haven-slate-500">
             <ChevronDown className={cn(selectSize === 'sm' ? 'w-3.5 h-3.5' : 'w-4 h-4')} />
           </div>
         </div>
@@ -122,7 +122,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         )}
 
         {!error && helperText && (
-          <p id={helperId} className="text-xs text-haven-charcoal-muted">
+          <p id={helperId} className="text-xs text-haven-slate-500">
             {helperText}
           </p>
         )}

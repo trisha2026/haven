@@ -57,14 +57,14 @@ export function Topbar({
   }, []);
 
   return (
-    <header className="sticky top-0 z-30 h-topbar shrink-0 bg-haven-cream/90 backdrop-blur-md border-b border-haven-border shadow-haven-sm">
+    <header className="sticky top-0 z-30 h-topbar shrink-0 bg-white/95 backdrop-blur-md border-b border-haven-border shadow-haven-sm">
       <div className="h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
         {/* Left Section: Mobile Menu Trigger + Breadcrumbs */}
         <div className="flex items-center gap-3 min-w-0">
           <button
             type="button"
             onClick={onOpenMobileSidebar}
-            className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer"
+            className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl text-haven-slate-700 hover:bg-haven-slate-100 transition-colors cursor-pointer"
             aria-label="Open navigation menu"
           >
             <Menu className="w-5 h-5" />
@@ -80,16 +80,16 @@ export function Topbar({
             onClick={() => setSearchOpen(true)}
             className={cn(
               'w-full flex items-center justify-between gap-3 px-3.5 py-2 rounded-xl text-xs font-normal text-left transition-all cursor-pointer',
-              'bg-haven-offwhite border border-haven-border hover:bg-haven-greige-soft/50 hover:border-haven-taupe',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-mocha/40'
+              'bg-haven-slate-50 border border-haven-border hover:bg-haven-slate-100 hover:border-haven-blue-500/40',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue-700/30'
             )}
             aria-label="Search residents, wings, staff, modules"
           >
-            <div className="flex items-center gap-2.5 text-haven-charcoal-muted">
-              <Search className="w-4 h-4 text-haven-taupe shrink-0" />
+            <div className="flex items-center gap-2.5 text-haven-slate-500">
+              <Search className="w-4 h-4 text-haven-slate-500 shrink-0" />
               <span className="truncate">Search records, rooms, protocols...</span>
             </div>
-            <kbd className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-haven-cream border border-haven-border font-mono text-[10px] text-haven-charcoal-muted">
+            <kbd className="hidden lg:inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-white border border-haven-border font-mono text-[10px] text-haven-slate-500">
               <span>⌘</span>K
             </kbd>
           </button>
@@ -104,7 +104,7 @@ export function Topbar({
           <button
             type="button"
             onClick={() => setSearchOpen(true)}
-            className="sm:hidden p-2 rounded-xl text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer"
+            className="sm:hidden p-2 rounded-xl text-haven-slate-700 hover:bg-haven-slate-100 transition-colors cursor-pointer"
             aria-label="Open search dialog"
           >
             <Search className="w-5 h-5" />
@@ -114,7 +114,7 @@ export function Topbar({
           <button
             type="button"
             onClick={() => setHelpOpen(true)}
-            className="p-2 rounded-xl text-haven-charcoal-muted hover:text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer"
+            className="p-2 rounded-xl text-haven-slate-500 hover:text-haven-slate-900 hover:bg-haven-slate-100 transition-colors cursor-pointer"
             aria-label="Help and facility support directory"
             title="Help and emergency directory"
           >
@@ -132,13 +132,13 @@ export function Topbar({
               }}
               aria-expanded={notificationsOpen}
               aria-haspopup="true"
-              className="relative p-2 rounded-xl text-haven-charcoal-muted hover:text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer"
+              className="relative p-2 rounded-xl text-haven-slate-500 hover:text-haven-slate-900 hover:bg-haven-slate-100 transition-colors cursor-pointer"
               aria-label={`Notifications, ${notificationsState.unreadCount} unread`}
               title="Notifications"
             >
               <Bell className="w-5 h-5" />
               {notificationsState.unreadCount > 0 && (
-                <span className="absolute top-1.5 right-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-haven-mocha text-[10px] font-bold text-haven-offwhite px-1 shadow-sm ring-2 ring-haven-cream">
+                <span className="absolute top-1.5 right-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-haven-blue-700 text-[10px] font-bold text-white px-1 shadow-sm ring-2 ring-white">
                   {notificationsState.unreadCount}
                 </span>
               )}
@@ -152,7 +152,7 @@ export function Topbar({
             />
           </div>
 
-          <div className="h-6 w-px bg-haven-border-light hidden sm:block" aria-hidden="true" />
+          <div className="h-6 w-px bg-haven-border hidden sm:block" aria-hidden="true" />
 
           {/* User Profile Avatar & Dropdown */}
           <div className="relative">
@@ -165,19 +165,19 @@ export function Topbar({
               }}
               aria-expanded={profileOpen}
               aria-haspopup="true"
-              className="flex items-center gap-2 p-1 pl-1.5 rounded-full hover:bg-haven-greige-soft transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-mocha/40"
+              className="flex items-center gap-2 p-1 pl-1.5 rounded-full hover:bg-haven-slate-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue-700/40"
               aria-label={`User menu for ${user.fullName}`}
             >
               <Avatar initials={user.initials} size="sm" status="online" />
               <div className="hidden lg:block text-left text-xs leading-tight pr-1">
-                <p className="font-semibold text-haven-charcoal truncate max-w-[120px]">
+                <p className="font-semibold text-haven-slate-900 truncate max-w-[120px]">
                   {user.preferredName}
                 </p>
-                <p className="text-[10px] text-haven-charcoal-muted truncate max-w-[120px]">
+                <p className="text-[10px] text-haven-slate-500 truncate max-w-[120px]">
                   {user.title.split(',')[0]}
                 </p>
               </div>
-              <ChevronDown className="w-3.5 h-3.5 text-haven-charcoal-muted hidden sm:block" />
+              <ChevronDown className="w-3.5 h-3.5 text-haven-slate-500 hidden sm:block" />
             </button>
 
             <ProfileDropdown

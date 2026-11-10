@@ -29,7 +29,7 @@ export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
       <div
         ref={ref}
         className={cn(
-          'flex flex-col items-center justify-center text-center rounded-2xl border border-dashed border-haven-border bg-haven-offwhite/50',
+          'flex flex-col items-center justify-center text-center rounded-2xl border border-dashed border-haven-border bg-white',
           compact ? 'p-6 gap-3' : 'p-10 sm:p-12 gap-4',
           className
         )}
@@ -38,7 +38,7 @@ export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
         {icon && (
           <div
             className={cn(
-              'rounded-full bg-haven-greige/40 text-haven-mocha flex items-center justify-center border border-haven-border',
+              'rounded-full bg-haven-blue-100 text-haven-blue-700 flex items-center justify-center border border-haven-border',
               compact ? 'w-10 h-10 [&>svg]:w-5 [&>svg]:h-5' : 'w-14 h-14 [&>svg]:w-7 [&>svg]:h-7'
             )}
           >
@@ -49,7 +49,7 @@ export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
         <div className={cn('space-y-1', compact ? 'max-w-xs' : 'max-w-md')}>
           <h3
             className={cn(
-              'font-semibold text-haven-charcoal tracking-tight',
+              'font-semibold text-haven-slate-900 tracking-tight',
               compact ? 'text-base' : 'text-lg'
             )}
           >
@@ -58,7 +58,7 @@ export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
           {description && (
             <p
               className={cn(
-                'text-haven-charcoal-muted leading-relaxed',
+                'text-haven-slate-500 leading-relaxed',
                 compact ? 'text-xs' : 'text-sm'
               )}
             >

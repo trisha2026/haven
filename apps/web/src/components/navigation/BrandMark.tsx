@@ -15,7 +15,7 @@ export function BrandMark({ workspace, compact = false, className }: BrandMarkPr
     <div className={cn('flex min-w-0 items-center gap-3', className)}>
       <span
         aria-hidden="true"
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-haven-mocha text-haven-offwhite shadow-haven-sm"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-haven-blue-700 text-white shadow-haven-sm"
       >
         <Heart className="h-5 w-5 stroke-[2.2]" />
       </span>
@@ -23,9 +23,9 @@ export function BrandMark({ workspace, compact = false, className }: BrandMarkPr
         <span className="sr-only">HAVEN{workspace ? ` — ${workspace}` : ''}</span>
       ) : (
         <span className="min-w-0 leading-tight">
-          <span className="block text-base font-bold tracking-[0.14em] text-haven-charcoal">HAVEN</span>
+          <span className="block text-base font-bold tracking-[0.14em] text-haven-navy-900">HAVEN</span>
           {workspace && (
-            <span className="block truncate text-[11px] font-medium text-haven-charcoal-muted">
+            <span className="block truncate text-[11px] font-medium text-haven-slate-500">
               {workspace}
             </span>
           )}

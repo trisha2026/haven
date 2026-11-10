@@ -8,7 +8,10 @@ export type BadgeVariant =
   | 'success'
   | 'warning'
   | 'danger'
-  | 'info';
+  | 'critical'
+  | 'info'
+  | 'information'
+  | 'neutral';
 
 export type BadgeSize = 'sm' | 'md';
 
@@ -36,40 +39,56 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       'inline-flex items-center font-medium transition-colors select-none rounded-full';
 
     const variants: Record<BadgeVariant, string> = {
-      // Default: Warm Mocha/Taupe aesthetic
+      // Default: Royal blue-100 / blue-700
       default:
-        'bg-haven-greige-soft text-haven-mocha-dark border border-haven-border',
+        'bg-haven-blue-100 text-haven-blue-700 border border-haven-blue-100',
 
-      // Secondary: Soft greige
+      // Secondary: Neutral slate-100 / slate-500
       secondary:
-        'bg-haven-offwhite text-haven-charcoal-muted border border-haven-border-light',
+        'bg-haven-slate-100 text-haven-slate-500 border border-haven-border',
 
-      // Outline: Greige border with charcoal text
+      // Neutral alias: #F1F5F9 / #64748B
+      neutral:
+        'bg-haven-slate-100 text-haven-slate-500 border border-haven-border',
+
+      // Outline: clean white with border and slate text
       outline:
-        'bg-transparent text-haven-charcoal border border-haven-taupe',
+        'bg-white text-haven-slate-700 border border-haven-border',
 
-      // Calming Warm Statuses (avoiding harsh hospital neon)
+      // Success: #E8F5EF / #16856B
       success:
         'bg-haven-success-soft text-haven-success border border-haven-success-border',
 
+      // Warning: #FFF5E5 / #A96B12
       warning:
         'bg-haven-warning-soft text-haven-warning border border-haven-warning-border',
 
+      // Danger / Critical: #FDEDEC / #C84D45
       danger:
         'bg-haven-danger-soft text-haven-danger border border-haven-danger-border',
 
+      critical:
+        'bg-haven-danger-soft text-haven-danger border border-haven-danger-border',
+
+      // Information / Info: #EAF2FF / #2457C5
       info:
+        'bg-haven-info-soft text-haven-info border border-haven-info-border',
+
+      information:
         'bg-haven-info-soft text-haven-info border border-haven-info-border',
     };
 
     const dotColors: Record<BadgeVariant, string> = {
-      default: 'bg-haven-mocha',
-      secondary: 'bg-haven-taupe',
-      outline: 'bg-haven-charcoal',
+      default: 'bg-haven-blue-700',
+      secondary: 'bg-haven-slate-500',
+      neutral: 'bg-haven-slate-500',
+      outline: 'bg-haven-slate-700',
       success: 'bg-haven-success',
       warning: 'bg-haven-warning',
       danger: 'bg-haven-danger',
+      critical: 'bg-haven-danger',
       info: 'bg-haven-info',
+      information: 'bg-haven-info',
     };
 
     const sizes: Record<BadgeSize, string> = {

@@ -53,19 +53,19 @@ export function PlaceholderPage({ role, title: overrideTitle, description: overr
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-haven-border pb-5">
         <div className="flex items-start gap-3.5">
-          <div className="w-12 h-12 rounded-2xl bg-haven-mocha text-haven-offwhite flex items-center justify-center shrink-0 shadow-haven-sm mt-0.5">
+          <div className="w-12 h-12 rounded-2xl bg-haven-blue-700 text-white flex items-center justify-center shrink-0 shadow-haven-sm mt-0.5">
             <Icon className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2.5">
-              <h1 className="text-2xl font-bold tracking-tight text-haven-charcoal">{title}</h1>
+              <h1 className="text-2xl font-bold tracking-tight text-haven-navy-900">{title}</h1>
               {resolved?.item.badge && (
                 <Badge variant={resolved.item.badge.variant} size="sm">
                   {resolved.item.badge.label} pending
                 </Badge>
               )}
             </div>
-            <p className="text-sm text-haven-charcoal-muted mt-1 max-w-2xl leading-relaxed">
+            <p className="text-sm text-haven-slate-500 mt-1 max-w-2xl leading-relaxed">
               {description}
             </p>
           </div>
@@ -85,37 +85,37 @@ export function PlaceholderPage({ role, title: overrideTitle, description: overr
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card variant="default" padding="sm">
           <div className="p-3">
-            <span className="text-xs font-semibold text-haven-charcoal-muted uppercase tracking-wider">
+            <span className="text-xs font-semibold text-haven-slate-500 uppercase tracking-wider">
               Active Records
             </span>
             <div className="flex items-baseline justify-between mt-2">
-              <span className="text-2xl font-bold text-haven-charcoal">48</span>
+              <span className="text-2xl font-bold text-haven-slate-900">48</span>
               <Badge variant="success" size="sm" dot>
                 Verified
               </Badge>
             </div>
-            <p className="text-[11px] text-haven-charcoal-muted mt-1">Updated 12 mins ago</p>
+            <p className="text-[11px] text-haven-slate-500 mt-1">Updated 12 mins ago</p>
           </div>
         </Card>
 
         <Card variant="default" padding="sm">
           <div className="p-3">
-            <span className="text-xs font-semibold text-haven-charcoal-muted uppercase tracking-wider">
+            <span className="text-xs font-semibold text-haven-slate-500 uppercase tracking-wider">
               Pending Actions
             </span>
             <div className="flex items-baseline justify-between mt-2">
-              <span className="text-2xl font-bold text-haven-mocha">3</span>
+              <span className="text-2xl font-bold text-haven-blue-700">3</span>
               <Badge variant="warning" size="sm">
                 Attention
               </Badge>
             </div>
-            <p className="text-[11px] text-haven-charcoal-muted mt-1">2 scheduled for next round</p>
+            <p className="text-[11px] text-haven-slate-500 mt-1">2 scheduled for next round</p>
           </div>
         </Card>
 
         <Card variant="default" padding="sm">
           <div className="p-3">
-            <span className="text-xs font-semibold text-haven-charcoal-muted uppercase tracking-wider">
+            <span className="text-xs font-semibold text-haven-slate-500 uppercase tracking-wider">
               Compliance Status
             </span>
             <div className="flex items-baseline justify-between mt-2">
@@ -124,29 +124,29 @@ export function PlaceholderPage({ role, title: overrideTitle, description: overr
                 Audit Pass
               </Badge>
             </div>
-            <p className="text-[11px] text-haven-charcoal-muted mt-1">Regulatory checks logged</p>
+            <p className="text-[11px] text-haven-slate-500 mt-1">Regulatory checks logged</p>
           </div>
         </Card>
 
         <Card variant="default" padding="sm">
           <div className="p-3">
-            <span className="text-xs font-semibold text-haven-charcoal-muted uppercase tracking-wider">
+            <span className="text-xs font-semibold text-haven-slate-500 uppercase tracking-wider">
               Assigned Personnel
             </span>
             <div className="flex items-baseline justify-between mt-2">
-              <span className="text-2xl font-bold text-haven-charcoal">14</span>
+              <span className="text-2xl font-bold text-haven-slate-900">14</span>
               <Badge variant="secondary" size="sm">
                 Shift Active
               </Badge>
             </div>
-            <p className="text-[11px] text-haven-charcoal-muted mt-1">Across 4 resident wings</p>
+            <p className="text-[11px] text-haven-slate-500 mt-1">Across 4 resident wings</p>
           </div>
         </Card>
       </div>
 
       {/* Primary Data Table Section */}
       <Card variant="default" padding="none">
-        <CardHeader className="p-5 border-b border-haven-borderLight">
+        <CardHeader className="p-5 border-b border-haven-border">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 w-full">
             <div>
               <CardTitle>{title} Ledger</CardTitle>
@@ -175,17 +175,17 @@ export function PlaceholderPage({ role, title: overrideTitle, description: overr
           <TableBody>
             {MOCK_RESIDENTS.map((res) => (
               <TableRow key={res.id}>
-                <TableCell className="font-semibold text-haven-charcoal">
+                <TableCell className="font-semibold text-haven-slate-900">
                   <div>
                     <span>{res.name}</span>
-                    <span className="block text-xs font-normal text-haven-charcoal-muted">
+                    <span className="block text-xs font-normal text-haven-slate-500">
                       ID: {res.id}
                     </span>
                   </div>
                 </TableCell>
                 <TableCell>
-                  <span className="font-medium text-xs text-haven-charcoal">{res.room}</span>
-                  <span className="block text-[11px] text-haven-charcoal-muted">{res.wing}</span>
+                  <span className="font-medium text-xs text-haven-slate-900">{res.room}</span>
+                  <span className="block text-[11px] text-haven-slate-500">{res.wing}</span>
                 </TableCell>
                 <TableCell>
                   <Badge variant="outline" size="sm">
@@ -201,12 +201,12 @@ export function PlaceholderPage({ role, title: overrideTitle, description: overr
                     {res.status.toUpperCase()}
                   </Badge>
                 </TableCell>
-                <TableCell className="text-xs text-haven-charcoal-muted">
+                <TableCell className="text-xs text-haven-slate-500">
                   {res.primaryNurse}
                 </TableCell>
-                <TableCell className="text-xs text-haven-charcoal">
-                  <div className="flex items-center gap-1 text-haven-charcoal-muted">
-                    <Clock className="w-3.5 h-3.5 text-haven-taupe" />
+                <TableCell className="text-xs text-haven-slate-900">
+                  <div className="flex items-center gap-1 text-haven-slate-500">
+                    <Clock className="w-3.5 h-3.5 text-haven-slate-500" />
                     <span>{res.lastCheckIn}</span>
                   </div>
                 </TableCell>
@@ -220,8 +220,8 @@ export function PlaceholderPage({ role, title: overrideTitle, description: overr
           </TableBody>
         </Table>
 
-        <CardFooter className="p-4 bg-haven-offwhite/50 border-t border-haven-borderLight">
-          <span className="text-xs text-haven-charcoal-muted">
+        <CardFooter className="p-4 bg-haven-slate-50/50 border-t border-haven-border">
+          <span className="text-xs text-haven-slate-500">
             Showing 4 of 48 active records in this facility registry.
           </span>
           <Button variant="outline" size="sm" leftIcon={<RotateCcw className="w-3.5 h-3.5" />}>
@@ -233,12 +233,12 @@ export function PlaceholderPage({ role, title: overrideTitle, description: overr
       {/* Info Card explaining module state */}
       <Card variant="subtle" padding="md">
         <div className="flex items-start gap-3">
-          <Sparkles className="w-5 h-5 text-haven-mocha shrink-0 mt-0.5" />
+          <Sparkles className="w-5 h-5 text-haven-blue-700 shrink-0 mt-0.5" />
           <div className="space-y-1">
-            <h4 className="text-xs font-bold text-haven-charcoal uppercase tracking-wider">
+            <h4 className="text-xs font-bold text-haven-navy-900 uppercase tracking-wider">
               Frontend Shared Layout Preview
             </h4>
-            <p className="text-xs text-haven-charcoal-muted leading-relaxed">
+            <p className="text-xs text-haven-slate-500 leading-relaxed">
               This route (<code>{pathname}</code>) is fully configured within the {role.toUpperCase()} navigation structure.
               Use the sidebar to navigate between modules, or test the global search (<code>⌘K</code>) and notification drawer.
             </p>

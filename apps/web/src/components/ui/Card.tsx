@@ -23,21 +23,21 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     ref
   ) => {
     const baseStyles =
-      'rounded-2xl transition-all duration-200 text-haven-charcoal relative overflow-hidden';
+      'rounded-2xl transition-all duration-200 text-haven-slate-900 relative overflow-hidden';
 
     const variants: Record<CardVariant, string> = {
-      // Default: Clean off-white surface with warm greige border and delicate diffuse shadow
+      // Default: Crisp white surface with #E6ECF4 border and subtle calm shadow
       default:
-        'bg-haven-cream border border-haven-border/80 shadow-haven-card',
-      // Outlined: Flat surface with crisp greige boundary
+        'bg-white border border-haven-border shadow-haven-card',
+      // Outlined: Flat clean white surface with subtle boundary
       outlined:
-        'bg-haven-offwhite border border-haven-border',
-      // Subtle: Tinted surface blending with greige tones
+        'bg-white border border-haven-border',
+      // Subtle: Light slate-50 section surface
       subtle:
-        'bg-haven-greige-soft/50 border border-haven-border-light',
-      // Elevated: Premium floating surface with deeper calm shadow
+        'bg-haven-slate-50 border border-haven-border-light',
+      // Elevated: Premium white surface with gentle elevation
       elevated:
-        'bg-white border border-haven-border/60 shadow-haven-hover',
+        'bg-white border border-haven-border shadow-haven-hover',
     };
 
     const paddings: Record<CardPadding, string> = {
@@ -48,7 +48,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     };
 
     const interactiveStyles = interactive
-      ? 'cursor-pointer hover:shadow-haven-hover hover:border-haven-taupe hover:-translate-y-0.5 active:translate-y-0'
+      ? 'cursor-pointer hover:shadow-haven-hover hover:border-haven-blue-500/50 hover:-translate-y-0.5 active:translate-y-0'
       : '';
 
     return (
@@ -95,7 +95,7 @@ export const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
       <Component
         ref={ref}
         className={cn(
-          'text-lg font-semibold tracking-tight text-haven-charcoal leading-snug',
+          'text-lg font-semibold tracking-tight text-haven-slate-900 leading-snug',
           className
         )}
         {...props}
@@ -114,7 +114,7 @@ export const CardDescription = React.forwardRef<
   return (
     <p
       ref={ref}
-      className={cn('text-sm text-haven-charcoal-muted leading-relaxed', className)}
+      className={cn('text-sm text-haven-slate-500 leading-relaxed', className)}
       {...props}
     >
       {children}
@@ -128,7 +128,7 @@ export const CardContent = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ children, className, ...props }, ref) => {
   return (
-    <div ref={ref} className={cn('text-sm text-haven-charcoal', className)} {...props}>
+    <div ref={ref} className={cn('text-sm text-haven-slate-700', className)} {...props}>
       {children}
     </div>
   );
@@ -143,7 +143,7 @@ export const CardFooter = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        'flex items-center justify-between pt-4 mt-4 border-t border-haven-border-light text-sm text-haven-charcoal-muted',
+        'flex items-center justify-between pt-4 mt-4 border-t border-haven-border-light text-sm text-haven-slate-500',
         className
       )}
       {...props}

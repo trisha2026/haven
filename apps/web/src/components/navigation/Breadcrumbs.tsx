@@ -18,7 +18,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className={cn('min-w-0', className)}>
       {/* Compact: current page only */}
-      <p className="truncate text-sm font-semibold text-haven-charcoal lg:hidden" aria-current="page">
+      <p className="truncate text-sm font-semibold text-haven-slate-900 lg:hidden" aria-current="page">
         {current?.label}
       </p>
 
@@ -29,12 +29,12 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
           return (
             <li key={`${item.label}-${index}`} className="flex min-w-0 items-center gap-1.5">
               {index > 0 && (
-                <ChevronRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-haven-taupe" />
+                <ChevronRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-haven-slate-500/70" />
               )}
               {item.href && !isLast ? (
                 <Link
                   to={item.href}
-                  className="truncate rounded-sm text-haven-charcoal-muted transition-colors hover:text-haven-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-mocha/40"
+                  className="truncate rounded-sm text-haven-slate-500 transition-colors hover:text-haven-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue-700/40"
                 >
                   {item.label}
                 </Link>
@@ -43,7 +43,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
                   aria-current={isLast ? 'page' : undefined}
                   className={cn(
                     'truncate',
-                    isLast ? 'font-semibold text-haven-charcoal' : 'text-haven-charcoal-muted'
+                    isLast ? 'font-semibold text-haven-slate-900' : 'text-haven-slate-500'
                   )}
                 >
                   {item.label}

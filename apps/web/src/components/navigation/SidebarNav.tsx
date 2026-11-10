@@ -4,23 +4,29 @@ import { Tooltip } from '../ui/Tooltip.tsx';
 import { cn } from '../../utils/cn.ts';
 
 const BADGE_TONES: Record<NonNullable<NavItem['badge']>['variant'], string> = {
-  default: 'bg-haven-greige text-haven-mocha-dark',
-  secondary: 'bg-haven-greige-soft text-haven-charcoal-muted',
-  outline: 'border border-haven-taupe text-haven-charcoal',
+  default: 'bg-haven-blue-100 text-haven-blue-700',
+  secondary: 'bg-haven-slate-100 text-haven-slate-500',
+  outline: 'border border-haven-border bg-white text-haven-slate-700',
   success: 'bg-haven-success-soft text-haven-success',
   warning: 'bg-haven-warning-soft text-haven-warning',
-  danger: 'bg-haven-danger text-white',
+  danger: 'bg-haven-danger-soft text-haven-danger',
+  critical: 'bg-haven-danger-soft text-haven-danger',
   info: 'bg-haven-info-soft text-haven-info',
+  information: 'bg-haven-info-soft text-haven-info',
+  neutral: 'bg-haven-slate-100 text-haven-slate-500',
 };
 
 const DOT_TONES: Record<NonNullable<NavItem['badge']>['variant'], string> = {
-  default: 'bg-haven-mocha',
-  secondary: 'bg-haven-taupe',
-  outline: 'bg-haven-charcoal',
+  default: 'bg-haven-blue-700',
+  secondary: 'bg-haven-slate-500',
+  outline: 'bg-haven-slate-700',
   success: 'bg-haven-success',
   warning: 'bg-haven-warning',
   danger: 'bg-haven-danger',
+  critical: 'bg-haven-danger',
   info: 'bg-haven-info',
+  information: 'bg-haven-info',
+  neutral: 'bg-haven-slate-500',
 };
 
 interface SidebarNavLinkProps {
@@ -43,21 +49,21 @@ function SidebarNavLink({ item, collapsed, onNavigate }: SidebarNavLinkProps) {
         className={({ isActive }) =>
           cn(
             'group relative flex w-full items-center gap-3 rounded-lg text-sm transition-colors duration-150',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-mocha/40 focus-visible:ring-offset-1 focus-visible:ring-offset-haven-cream',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue-700/30 focus-visible:ring-offset-1 focus-visible:ring-offset-white',
             collapsed ? 'h-11 justify-center px-0' : 'min-h-10 px-3 py-2',
             isActive
-              ? 'bg-haven-greige-soft font-semibold text-haven-charcoal'
-              : 'font-medium text-haven-charcoal-light hover:bg-haven-greige-soft/70 hover:text-haven-charcoal'
+              ? 'bg-haven-blue-100 font-semibold text-haven-blue-700'
+              : 'font-medium text-haven-slate-700 hover:bg-haven-slate-100 hover:text-haven-slate-900'
           )
         }
       >
         {({ isActive }) => (
           <>
-            {/* Active indicator */}
+            {/* Active indicator bar */}
             <span
               aria-hidden="true"
               className={cn(
-                'absolute left-0 top-1/2 h-5 w-[3px] -translate-y-1/2 rounded-r-full bg-haven-mocha transition-opacity',
+                'absolute left-0 top-1/2 h-5 w-[3px] -translate-y-1/2 rounded-r-full bg-haven-blue-700 transition-opacity',
                 isActive ? 'opacity-100' : 'opacity-0'
               )}
             />
@@ -66,14 +72,14 @@ function SidebarNavLink({ item, collapsed, onNavigate }: SidebarNavLinkProps) {
                 aria-hidden="true"
                 className={cn(
                   'h-[18px] w-[18px] transition-colors',
-                  isActive ? 'text-haven-mocha' : 'text-haven-taupe-dark group-hover:text-haven-mocha'
+                  isActive ? 'text-haven-blue-700' : 'text-haven-slate-500 group-hover:text-haven-blue-700'
                 )}
               />
               {collapsed && item.badge && (
                 <span
                   aria-hidden="true"
                   className={cn(
-                    'absolute -right-1 -top-1 h-2 w-2 rounded-full ring-2 ring-haven-cream',
+                    'absolute -right-1 -top-1 h-2 w-2 rounded-full ring-2 ring-white',
                     DOT_TONES[item.badge.variant]
                   )}
                 />
@@ -108,7 +114,7 @@ export interface SidebarNavProps {
   onNavigate?: () => void;
 }
 
-/** Grouped, scrollable list of role navigation links. */
+/** Grouped, scrollable list of role navigation links with approved Blue theme. */
 export function SidebarNav({ groups, collapsed, onNavigate }: SidebarNavProps) {
   return (
     <nav aria-label="Main navigation" className="haven-scroll flex-1 overflow-y-auto overflow-x-hidden px-3 py-4">
@@ -127,7 +133,7 @@ export function SidebarNav({ groups, collapsed, onNavigate }: SidebarNavProps) {
               ) : (
                 <h2
                   id={headingId}
-                  className="mb-1.5 px-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-haven-taupe-dark"
+                  className="mb-1.5 px-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-haven-slate-500"
                 >
                   {group.label}
                 </h2>

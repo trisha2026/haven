@@ -11,8 +11,8 @@ import { useFocusTrap } from '../../hooks/useFocusTrap.ts';
 import { useBodyScrollLock, useEscapeKey } from '../../hooks/useDismiss.ts';
 
 const ICON_BUTTON =
-  'inline-flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-lg text-haven-charcoal-muted transition-colors ' +
-  'hover:bg-haven-greige-soft hover:text-haven-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-mocha/40';
+  'inline-flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-lg text-haven-slate-500 transition-colors ' +
+  'hover:bg-haven-slate-100 hover:text-haven-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue-700/40';
 
 interface SidebarFooterProps {
   user: AppUser;
@@ -35,9 +35,9 @@ function SidebarFooter({ user, collapsed }: SidebarFooterProps) {
 
   return (
     <div className="border-t border-haven-border-light p-3">
-      <div className="rounded-xl border border-haven-border-light bg-haven-offwhite px-3 py-2.5">
-        <p className="truncate text-xs font-semibold text-haven-charcoal">{user.facility}</p>
-        <p className="mt-1 flex items-center gap-1.5 text-[11px] text-haven-charcoal-muted">
+      <div className="rounded-xl border border-haven-border-light bg-haven-slate-50 px-3 py-2.5">
+        <p className="truncate text-xs font-semibold text-haven-slate-900">{user.facility}</p>
+        <p className="mt-1 flex items-center gap-1.5 text-[11px] text-haven-slate-500">
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-haven-success" />
           Facility systems normal
         </p>
@@ -55,7 +55,7 @@ export interface SidebarProps {
   onNavigate?: () => void;
 }
 
-/** Persistent sidebar rail for tablet and desktop. */
+/** Persistent sidebar rail for tablet and desktop (Clean White). */
 export function Sidebar({ navigation, user, collapsed, onToggleCollapsed, onNavigate }: SidebarProps) {
   const meta = ROLE_META[navigation.role];
 
@@ -63,7 +63,7 @@ export function Sidebar({ navigation, user, collapsed, onToggleCollapsed, onNavi
     <aside
       aria-label={`${meta.label} sidebar`}
       className={cn(
-        'fixed inset-y-0 left-0 z-40 hidden flex-col border-r border-haven-border bg-haven-cream md:flex',
+        'fixed inset-y-0 left-0 z-40 hidden flex-col border-r border-haven-border bg-white md:flex',
         'transition-[width,box-shadow] duration-200 ease-out',
         collapsed ? 'w-sidebar-collapsed' : 'w-sidebar'
       )}
@@ -132,7 +132,7 @@ export function MobileSidebar({ navigation, user, open, onClose }: MobileSidebar
     <div className="fixed inset-0 z-50 md:hidden">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-haven-charcoal/40 backdrop-blur-xs animate-fade-in"
+        className="absolute inset-0 bg-haven-slate-900/40 backdrop-blur-xs animate-fade-in"
         onClick={onClose}
       />
       <div
@@ -142,7 +142,7 @@ export function MobileSidebar({ navigation, user, open, onClose }: MobileSidebar
         aria-modal="true"
         aria-label={`${meta.label} navigation`}
         tabIndex={-1}
-        className="absolute inset-y-0 left-0 flex w-[min(86vw,300px)] flex-col bg-haven-cream shadow-haven-modal animate-slide-in-left focus:outline-none"
+        className="absolute inset-y-0 left-0 flex w-[min(86vw,300px)] flex-col bg-white shadow-haven-modal animate-slide-in-left focus:outline-none"
       >
         <div className="flex h-14 shrink-0 items-center justify-between border-b border-haven-border-light pl-4 pr-2">
           <BrandMark workspace={meta.workspace} />

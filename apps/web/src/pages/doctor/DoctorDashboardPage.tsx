@@ -26,16 +26,16 @@ export function DoctorDashboardPage() {
   return (
     <div className="space-y-8">
       {/* Clinical Lead Banner */}
-      <div className="bg-haven-cream rounded-3xl p-6 sm:p-8 border border-haven-border shadow-haven-card relative overflow-hidden">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-haven-border shadow-haven-card relative overflow-hidden">
         <div className="relative z-10 max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-haven-greige/50 border border-haven-border text-haven-mocha-dark text-xs font-semibold uppercase tracking-wider">
-            <Stethoscope className="w-3.5 h-3.5 text-haven-mocha" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-haven-blue-100 border border-haven-blue-500/20 text-haven-blue-700 text-xs font-semibold uppercase tracking-wider">
+            <Stethoscope className="w-3.5 h-3.5 text-haven-blue-700" />
             Clinical Practice &amp; Medical Oversight
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-haven-charcoal tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-haven-navy-900 tracking-tight">
             Doctor Command Centre
           </h1>
-          <p className="text-sm text-haven-charcoal-muted leading-relaxed">
+          <p className="text-sm text-haven-slate-500 leading-relaxed">
             Good afternoon, Dr. Mehta. You have 1 incident clinical review, 2 prescription renewals,
             and 4 comprehensive assessments pending your sign-off today.
           </p>
@@ -73,72 +73,72 @@ export function DoctorDashboardPage() {
         <Card variant="default" padding="sm" interactive onClick={() => navigate('/doctor/residents')}>
           <div className="p-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold text-haven-charcoal-muted uppercase tracking-wider">
+              <span className="text-xs font-semibold text-haven-slate-500 uppercase tracking-wider">
                 Residents Under Care
               </span>
-              <FileHeart className="w-4 h-4 text-haven-taupe" />
+              <FileHeart className="w-4 h-4 text-haven-slate-500" />
             </div>
             <div className="flex items-baseline justify-between mt-2">
-              <span className="text-2xl font-bold text-haven-charcoal">24</span>
+              <span className="text-2xl font-bold text-haven-slate-900">24</span>
               <Badge variant="success" size="sm">
                 Active Access
               </Badge>
             </div>
-            <p className="text-[11px] text-haven-charcoal-muted mt-1">Garden Terrace &amp; Sunrise Pavilion</p>
+            <p className="text-[11px] text-haven-slate-500 mt-1">Garden Terrace &amp; Sunrise Pavilion</p>
           </div>
         </Card>
 
         <Card variant="default" padding="sm" interactive onClick={() => navigate('/doctor/prescriptions')}>
           <div className="p-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold text-haven-charcoal-muted uppercase tracking-wider">
+              <span className="text-xs font-semibold text-haven-slate-500 uppercase tracking-wider">
                 Rx Authorizations
               </span>
-              <Pill className="w-4 h-4 text-haven-taupe" />
+              <Pill className="w-4 h-4 text-haven-slate-500" />
             </div>
             <div className="flex items-baseline justify-between mt-2">
-              <span className="text-2xl font-bold text-haven-mocha">2</span>
+              <span className="text-2xl font-bold text-haven-blue-700">2</span>
               <Badge variant="warning" size="sm">
                 Action Due
               </Badge>
             </div>
-            <p className="text-[11px] text-haven-charcoal-muted mt-1">Metformin renewal &amp; antibiotic titration</p>
+            <p className="text-[11px] text-haven-slate-500 mt-1">Metformin renewal &amp; antibiotic titration</p>
           </div>
         </Card>
 
         <Card variant="default" padding="sm" interactive onClick={() => navigate('/doctor/notes')}>
           <div className="p-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold text-haven-charcoal-muted uppercase tracking-wider">
+              <span className="text-xs font-semibold text-haven-slate-500 uppercase tracking-wider">
                 Assessments Done
               </span>
-              <NotebookPen className="w-4 h-4 text-haven-taupe" />
+              <NotebookPen className="w-4 h-4 text-haven-slate-500" />
             </div>
             <div className="flex items-baseline justify-between mt-2">
-              <span className="text-2xl font-bold text-haven-charcoal">7</span>
+              <span className="text-2xl font-bold text-haven-slate-900">7</span>
               <Badge variant="secondary" size="sm">
                 This Week
               </Badge>
             </div>
-            <p className="text-[11px] text-haven-charcoal-muted mt-1">Cognitive &amp; mobility reviews logged</p>
+            <p className="text-[11px] text-haven-slate-500 mt-1">Cognitive &amp; mobility reviews logged</p>
           </div>
         </Card>
 
         <Card variant="default" padding="sm" interactive onClick={() => navigate('/doctor/access-requests')}>
           <div className="p-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold text-haven-charcoal-muted uppercase tracking-wider">
+              <span className="text-xs font-semibold text-haven-slate-500 uppercase tracking-wider">
                 Access Permissions
               </span>
-              <KeyRound className="w-4 h-4 text-haven-taupe" />
+              <KeyRound className="w-4 h-4 text-haven-slate-500" />
             </div>
             <div className="flex items-baseline justify-between mt-2">
-              <span className="text-2xl font-bold text-haven-charcoal">Valid</span>
+              <span className="text-2xl font-bold text-haven-slate-900">Valid</span>
               <Badge variant="info" size="sm">
                 HIPAA / GDPR
               </Badge>
             </div>
-            <p className="text-[11px] text-haven-charcoal-muted mt-1">Full audit trail maintained</p>
+            <p className="text-[11px] text-haven-slate-500 mt-1">Full audit trail maintained</p>
           </div>
         </Card>
       </div>
@@ -148,7 +148,7 @@ export function DoctorDashboardPage() {
         {/* Left 2 Cols: Clinical Resident Reviews */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-base font-bold text-haven-charcoal">
+            <h3 className="text-base font-bold text-haven-navy-900">
               Clinical Review Roster
             </h3>
             <Button
@@ -167,11 +167,11 @@ export function DoctorDashboardPage() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-sm text-haven-charcoal">{res.name}</span>
+                      <span className="font-bold text-sm text-haven-slate-900">{res.name}</span>
                       <Badge variant="outline" size="sm">{res.careLevel}</Badge>
                       <Badge variant="secondary" size="sm">{res.room}</Badge>
                     </div>
-                    <p className="text-xs text-haven-charcoal-muted">
+                    <p className="text-xs text-haven-slate-500">
                       Allergies: <strong className="text-haven-danger">{res.allergies.join(', ')}</strong> · Lead Nurse: {res.primaryNurse}
                     </p>
                   </div>
@@ -212,10 +212,10 @@ export function DoctorDashboardPage() {
               <div className="p-3 rounded-xl bg-haven-danger-soft border border-haven-danger-border space-y-1">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-haven-danger">Fall Assessment Sign-Off</span>
-                  <span className="text-[10px] text-haven-danger">9m ago</span>
+                  <span className="text-[10px] text-haven-danger">1h 45m ago</span>
                 </div>
-                <p className="text-xs text-haven-charcoal">
-                  George Carver Jr. (Room 108-A). Physical therapy consult recommended.
+                <p className="text-xs text-haven-slate-900">
+                  George Washington Carver Jr. (Room 108-A). Physical therapy consult recommended.
                 </p>
                 <Button
                   variant="danger"
@@ -232,7 +232,7 @@ export function DoctorDashboardPage() {
                   <span className="text-xs font-bold text-haven-warning">Lab Result: Arthur Pendelton</span>
                   <span className="text-[10px] text-haven-warning">2h ago</span>
                 </div>
-                <p className="text-xs text-haven-charcoal">
+                <p className="text-xs text-haven-slate-900">
                   HbA1c results uploaded (7.1%). Dose adjustment suggested.
                 </p>
                 <Button
@@ -245,12 +245,12 @@ export function DoctorDashboardPage() {
                 </Button>
               </div>
 
-              <div className="p-3 rounded-xl bg-haven-offwhite border border-haven-border space-y-1">
+              <div className="p-3 rounded-xl bg-haven-slate-50 border border-haven-border space-y-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-haven-charcoal">Access Granted: Martha Higgins</span>
-                  <span className="text-[10px] text-haven-charcoal-muted">45m ago</span>
+                  <span className="text-xs font-bold text-haven-slate-900">Access Granted: Martha Higgins</span>
+                  <span className="text-[10px] text-haven-slate-500">45m ago</span>
                 </div>
-                <p className="text-xs text-haven-charcoal-muted">
+                <p className="text-xs text-haven-slate-500">
                   Full medical record access active until 30 November.
                 </p>
                 <Button

@@ -56,25 +56,25 @@ export function ProfileDropdown({ open, onClose, user, triggerRef }: ProfileDrop
         aria-orientation="vertical"
         aria-label="User account menu"
         className={cn(
-          'absolute right-0 top-full mt-2 w-80 bg-haven-cream rounded-2xl border border-haven-border shadow-haven-popover z-50',
-          'overflow-hidden text-haven-charcoal animate-pop-in focus:outline-none'
+          'absolute right-0 top-full mt-2 w-80 bg-white rounded-2xl border border-haven-border shadow-haven-popover z-50',
+          'overflow-hidden text-haven-slate-900 animate-pop-in focus:outline-none'
         )}
       >
         {/* User Card Header */}
-        <div className="p-4 bg-haven-offwhite border-b border-haven-border">
+        <div className="p-4 bg-haven-slate-50 border-b border-haven-border">
           <div className="flex items-start gap-3">
             <Avatar initials={user.initials} size="lg" status="online" />
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">
-                <p className="text-sm font-bold text-haven-charcoal truncate">{user.fullName}</p>
+                <p className="text-sm font-bold text-haven-slate-900 truncate">{user.fullName}</p>
               </div>
-              <p className="text-xs text-haven-charcoal-muted truncate">{user.email}</p>
+              <p className="text-xs text-haven-slate-500 truncate">{user.email}</p>
               <div className="mt-1.5 flex items-center gap-1.5">
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-haven-greige text-haven-mocha-dark">
-                  <Shield className="w-3 h-3 text-haven-mocha" />
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-haven-blue-100 text-haven-blue-700">
+                  <Shield className="w-3 h-3 text-haven-blue-700" />
                   {roleMeta.label}
                 </span>
-                <span className="text-[10px] font-mono text-haven-charcoal-muted">
+                <span className="text-[10px] font-mono text-haven-slate-500">
                   ID: {user.employeeId}
                 </span>
               </div>
@@ -82,13 +82,13 @@ export function ProfileDropdown({ open, onClose, user, triggerRef }: ProfileDrop
           </div>
 
           {/* Facility & Shift info */}
-          <div className="mt-3 pt-2.5 border-t border-haven-border-light space-y-1 text-xs text-haven-charcoal-muted">
+          <div className="mt-3 pt-2.5 border-t border-haven-border-light space-y-1 text-xs text-haven-slate-500">
             <div className="flex items-center gap-2">
-              <Building2 className="w-3.5 h-3.5 text-haven-taupe shrink-0" />
+              <Building2 className="w-3.5 h-3.5 text-haven-slate-500 shrink-0" />
               <span className="truncate">{user.facility}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock className="w-3.5 h-3.5 text-haven-taupe shrink-0" />
+              <Clock className="w-3.5 h-3.5 text-haven-slate-500 shrink-0" />
               <span className="truncate">{user.shift}</span>
             </div>
           </div>
@@ -100,9 +100,9 @@ export function ProfileDropdown({ open, onClose, user, triggerRef }: ProfileDrop
             type="button"
             role="menuitem"
             onClick={() => handleNavigate(`/${user.role}/profile`)}
-            className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer text-left"
+            className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-haven-slate-700 hover:bg-haven-slate-100 hover:text-haven-slate-900 transition-colors cursor-pointer text-left"
           >
-            <UserRound className="w-4 h-4 text-haven-taupe shrink-0" />
+            <UserRound className="w-4 h-4 text-haven-slate-500 shrink-0" />
             <span className="font-medium">My Profile &amp; Credentials</span>
           </button>
 
@@ -110,9 +110,9 @@ export function ProfileDropdown({ open, onClose, user, triggerRef }: ProfileDrop
             type="button"
             role="menuitem"
             onClick={() => handleNavigate(`/${user.role}/preferences`)}
-            className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer text-left"
+            className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-haven-slate-700 hover:bg-haven-slate-100 hover:text-haven-slate-900 transition-colors cursor-pointer text-left"
           >
-            <SlidersHorizontal className="w-4 h-4 text-haven-taupe shrink-0" />
+            <SlidersHorizontal className="w-4 h-4 text-haven-slate-500 shrink-0" />
             <span className="font-medium">Preferences &amp; Accessibility</span>
           </button>
 
@@ -120,15 +120,15 @@ export function ProfileDropdown({ open, onClose, user, triggerRef }: ProfileDrop
             type="button"
             role="menuitem"
             onClick={() => handleNavigate('/design-system')}
-            className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-haven-mocha hover:bg-haven-greige-soft transition-colors cursor-pointer text-left font-medium"
+            className="flex items-center gap-2.5 w-full px-3 py-2 rounded-xl text-haven-blue-700 hover:bg-haven-blue-50 transition-colors cursor-pointer text-left font-medium"
           >
-            <Palette className="w-4 h-4 text-haven-mocha shrink-0" />
+            <Palette className="w-4 h-4 text-haven-blue-700 shrink-0" />
             <span>HAVEN Design System Gallery</span>
           </button>
         </div>
 
         {/* Logout Footer */}
-        <div className="p-2 border-t border-haven-border bg-haven-offwhite/50">
+        <div className="p-2 border-t border-haven-border bg-haven-slate-50/50">
           <button
             type="button"
             role="menuitem"
@@ -150,11 +150,11 @@ export function ProfileDropdown({ open, onClose, user, triggerRef }: ProfileDrop
               Are you sure you want to sign out from the {roleMeta.label} session?
             </DialogDescription>
           </DialogHeader>
-          <div className="py-2 text-xs text-haven-charcoal-muted space-y-2">
+          <div className="py-2 text-xs text-haven-slate-500 space-y-2">
             <p>
               In production, this invalidates your Firebase authentication session and returns you to the login screen.
             </p>
-            <div className="p-2.5 rounded-lg bg-haven-offwhite border border-haven-border text-haven-charcoal flex items-center gap-2">
+            <div className="p-2.5 rounded-lg bg-haven-slate-50 border border-haven-border text-haven-slate-900 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-haven-success shrink-0" />
               <span>Current mock user: {user.fullName} ({roleMeta.label})</span>
             </div>

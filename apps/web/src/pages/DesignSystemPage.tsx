@@ -77,45 +77,45 @@ export function DesignSystemPage() {
   });
 
   return (
-    <div className="min-h-screen bg-haven-offwhite text-haven-charcoal flex flex-col font-sans">
+    <div className="min-h-screen bg-haven-blue-50 text-haven-slate-900 flex flex-col font-sans">
       {/* Top Navigation & Brand Header */}
-      <header className="sticky top-0 z-40 bg-haven-cream/90 backdrop-blur-md border-b border-haven-border shadow-haven-sm">
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-haven-border shadow-haven-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-haven-mocha flex items-center justify-center text-haven-offwhite shadow-haven-sm">
+            <div className="w-11 h-11 rounded-xl bg-haven-blue-700 flex items-center justify-center text-white shadow-haven-sm">
               <Heart className="w-6 h-6 stroke-[2.2]" />
             </div>
             <div>
               <div className="flex items-center gap-2.5">
-                <span className="text-xl font-bold tracking-tight text-haven-charcoal">HAVEN</span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-haven-greige text-haven-mocha-dark font-medium">
-                  Design System v1.0
+                <span className="text-xl font-bold tracking-tight text-haven-navy-900">HAVEN</span>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-haven-blue-100 text-haven-blue-700 font-semibold">
+                  Design System v2.0
                 </span>
               </div>
-              <p className="text-xs text-haven-charcoal-muted tracking-wide font-normal">
-                Elderly Care & Facility Management System
+              <p className="text-xs text-haven-slate-500 tracking-wide font-normal">
+                Elderly Care &amp; Facility Management System
               </p>
             </div>
           </div>
 
           {/* Navigation Tabs */}
-          <nav className="hidden md:flex items-center gap-1 bg-haven-greige-soft p-1 rounded-xl border border-haven-border-light">
+          <nav className="hidden md:flex items-center gap-1 bg-haven-slate-100 p-1 rounded-xl border border-haven-border-light">
             <button
               onClick={() => setActiveTab('overview')}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                 activeTab === 'overview'
-                  ? 'bg-haven-cream text-haven-charcoal shadow-haven-sm'
-                  : 'text-haven-charcoal-muted hover:text-haven-charcoal'
+                  ? 'bg-white text-haven-navy-900 shadow-haven-sm'
+                  : 'text-haven-slate-500 hover:text-haven-slate-900'
               }`}
             >
-              Overview & Tokens
+              Overview &amp; Tokens
             </button>
             <button
               onClick={() => setActiveTab('components')}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                 activeTab === 'components'
-                  ? 'bg-haven-cream text-haven-charcoal shadow-haven-sm'
-                  : 'text-haven-charcoal-muted hover:text-haven-charcoal'
+                  ? 'bg-white text-haven-navy-900 shadow-haven-sm'
+                  : 'text-haven-slate-500 hover:text-haven-slate-900'
               }`}
             >
               Component Gallery
@@ -124,8 +124,8 @@ export function DesignSystemPage() {
               onClick={() => setActiveTab('table-demo')}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                 activeTab === 'table-demo'
-                  ? 'bg-haven-cream text-haven-charcoal shadow-haven-sm'
-                  : 'text-haven-charcoal-muted hover:text-haven-charcoal'
+                  ? 'bg-white text-haven-navy-900 shadow-haven-sm'
+                  : 'text-haven-slate-500 hover:text-haven-slate-900'
               }`}
             >
               Care Directory Preview
@@ -143,19 +143,18 @@ export function DesignSystemPage() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
         {/* Hero Section */}
-        <section className="bg-haven-cream rounded-3xl p-8 sm:p-10 border border-haven-border shadow-haven-card relative overflow-hidden">
+        <section className="bg-white rounded-3xl p-8 sm:p-10 border border-haven-border shadow-haven-card relative overflow-hidden">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-haven-greige/50 border border-haven-border text-haven-mocha-dark text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-haven-mocha" />
-              Dignified & Calming Care Infrastructure
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-haven-blue-100 border border-haven-blue-500/20 text-haven-blue-700 text-xs font-semibold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-haven-blue-700" />
+              Royal Blue &amp; Ice Blue Design System v2.0
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-haven-charcoal tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-haven-navy-900 tracking-tight leading-tight">
               A safer, smarter and more caring place for every resident.
             </h1>
-            <p className="text-base sm:text-lg text-haven-charcoal-muted leading-relaxed">
-              HAVEN’s design system blends serene residential hospitality with information-rich,
-              accessible medical precision. Warm organic tones replace cold clinical surfaces to
-              honor residents and empower caregivers.
+            <p className="text-base sm:text-lg text-haven-slate-500 leading-relaxed">
+              HAVEN’s v2.0 design system pairs crisp royal blue clarity with serene ice-blue surfaces
+              and calm slate neutrals. Designed for high clinical legibility, accessible focus, and dignified residential comfort.
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Dialog>
@@ -230,90 +229,144 @@ export function DesignSystemPage() {
 
         {/* SECTION 1: DESIGN TOKENS & COLOR PALETTE */}
         {(activeTab === 'overview' || activeTab === 'tokens') && (
-          <section className="space-y-6">
+          <section className="space-y-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-haven-border pb-4">
               <div>
-                <h2 className="text-2xl font-bold tracking-tight text-haven-charcoal flex items-center gap-2.5">
-                  <Palette className="w-6 h-6 text-haven-mocha" />
-                  Design Tokens & Color Palette
+                <h2 className="text-2xl font-bold tracking-tight text-haven-navy-900 flex items-center gap-2.5">
+                  <Palette className="w-6 h-6 text-haven-blue-700" />
+                  Design Tokens &amp; Color Palette v2.0
                 </h2>
-                <p className="text-sm text-haven-charcoal-muted">
-                  Warm, welcoming palette configured into Tailwind CSS v4 variables.
+                <p className="text-sm text-haven-slate-500">
+                  Approved HAVEN Royal Blue &amp; Ice Blue tokens mapped to Tailwind CSS v4.
                 </p>
               </div>
-              <Badge variant="secondary" size="md">
-                5 Core Brand Tones + Calming Semantics
+              <Badge variant="default" size="md">
+                Royal Blue &amp; Ice Blue System
               </Badge>
             </div>
 
             {/* Core Brand Swatches */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-              {[
-                { name: 'Off-white', hex: HAVEN_COLORS.brand.offwhite, desc: 'Canvas / Background', textDark: true },
-                { name: 'Greige', hex: HAVEN_COLORS.brand.greige, desc: 'Borders & Structure', textDark: true },
-                { name: 'Taupe', hex: HAVEN_COLORS.brand.taupe, desc: 'Subtle Accents', textDark: false },
-                { name: 'Mocha', hex: HAVEN_COLORS.brand.mocha, desc: 'Primary Interactive', textDark: false },
-                { name: 'Charcoal', hex: HAVEN_COLORS.brand.charcoal, desc: 'Typography & Contrast', textDark: false },
-              ].map((color) => (
-                <div
-                  key={color.name}
-                  className="rounded-2xl border border-haven-border overflow-hidden bg-haven-cream shadow-haven-sm flex flex-col"
-                >
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-haven-slate-500">
+                Core Brand Tokens (5)
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                {[
+                  { name: 'navy-900', hex: HAVEN_COLORS.brand.navy900, desc: 'Brand, Major Headings', textDark: false },
+                  { name: 'blue-700', hex: HAVEN_COLORS.brand.blue700, desc: 'Primary Interactive & Focus', textDark: false },
+                  { name: 'blue-500', hex: HAVEN_COLORS.brand.blue500, desc: 'Links, Charts, Highlights', textDark: false },
+                  { name: 'blue-100', hex: HAVEN_COLORS.brand.blue100, desc: 'Selected States & Secondary', textDark: true },
+                  { name: 'blue-50', hex: HAVEN_COLORS.brand.blue50, desc: 'Main App Background', textDark: true },
+                ].map((color) => (
                   <div
-                    className="h-28 w-full p-3 flex flex-col justify-end transition-transform hover:scale-[1.02]"
-                    style={{ backgroundColor: color.hex }}
+                    key={color.name}
+                    className="rounded-2xl border border-haven-border overflow-hidden bg-white shadow-haven-sm flex flex-col"
                   >
-                    <span
-                      className={`text-xs font-mono font-bold px-2 py-0.5 rounded backdrop-blur-xs w-fit ${
-                        color.textDark ? 'text-haven-charcoal bg-white/70' : 'text-white bg-black/30'
-                      }`}
+                    <div
+                      className="h-28 w-full p-3 flex flex-col justify-end transition-transform hover:scale-[1.02]"
+                      style={{ backgroundColor: color.hex }}
                     >
-                      {color.hex}
-                    </span>
-                  </div>
-                  <div className="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h4 className="font-semibold text-sm text-haven-charcoal">{color.name}</h4>
-                      <p className="text-xs text-haven-charcoal-muted mt-0.5">{color.desc}</p>
+                      <span
+                        className={`text-xs font-mono font-bold px-2 py-0.5 rounded backdrop-blur-xs w-fit ${
+                          color.textDark ? 'text-haven-slate-900 bg-white/80' : 'text-white bg-black/30'
+                        }`}
+                      >
+                        {color.hex}
+                      </span>
+                    </div>
+                    <div className="p-4 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h4 className="font-semibold text-sm text-haven-slate-900">{color.name}</h4>
+                        <p className="text-xs text-haven-slate-500 mt-0.5">{color.desc}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Neutral Swatches */}
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-haven-slate-500">
+                Neutral Tokens (7)
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+                {[
+                  { name: 'white', hex: HAVEN_COLORS.neutral.white, desc: 'Sidebar, cards, dialogs', textDark: true },
+                  { name: 'slate-50', hex: HAVEN_COLORS.neutral.slate50, desc: 'Subtle sections', textDark: true },
+                  { name: 'slate-100', hex: HAVEN_COLORS.neutral.slate100, desc: 'Neutral separators', textDark: true },
+                  { name: 'border', hex: HAVEN_COLORS.neutral.border, desc: 'Subtle borders', textDark: true },
+                  { name: 'slate-500', hex: HAVEN_COLORS.neutral.slate500, desc: 'Secondary text', textDark: false },
+                  { name: 'slate-700', hex: HAVEN_COLORS.neutral.slate700, desc: 'Body text', textDark: false },
+                  { name: 'slate-900', hex: HAVEN_COLORS.neutral.slate900, desc: 'Primary text', textDark: false },
+                ].map((color) => (
+                  <div
+                    key={color.name}
+                    className="rounded-2xl border border-haven-border overflow-hidden bg-white shadow-haven-sm flex flex-col"
+                  >
+                    <div
+                      className="h-20 w-full p-2.5 flex flex-col justify-end transition-transform hover:scale-[1.02]"
+                      style={{ backgroundColor: color.hex }}
+                    >
+                      <span
+                        className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded backdrop-blur-xs w-fit ${
+                          color.textDark ? 'text-haven-slate-900 bg-white/80' : 'text-white bg-black/30'
+                        }`}
+                      >
+                        {color.hex}
+                      </span>
+                    </div>
+                    <div className="p-3 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h4 className="font-semibold text-xs text-haven-slate-900">{color.name}</h4>
+                        <p className="text-[11px] text-haven-slate-500 mt-0.5">{color.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Semantic Status Colors */}
-            <div className="mt-6 p-6 rounded-2xl bg-haven-cream border border-haven-border space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-haven-charcoal-muted">
-                Calming Semantic Status Accents (Non-Hospital Styling)
+            <div className="p-6 rounded-2xl bg-white border border-haven-border space-y-4 shadow-haven-card">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-haven-slate-500">
+                Calming Semantic Status Accents (Exact bg / fg pairs)
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
                 <div className="p-4 rounded-xl bg-haven-success-soft border border-haven-success-border flex items-center justify-between">
                   <div>
-                    <span className="text-xs font-bold text-haven-success uppercase tracking-wider">Success / Stable</span>
-                    <p className="text-xs text-haven-charcoal-muted mt-0.5">Gentle Forest Green (#3E7356)</p>
+                    <span className="text-xs font-bold text-haven-success uppercase tracking-wider">Success</span>
+                    <p className="text-[11px] text-haven-slate-500 mt-0.5">#E8F5EF / #16856B</p>
                   </div>
                   <CheckCircle2 className="w-5 h-5 text-haven-success" />
                 </div>
+                <div className="p-4 rounded-xl bg-haven-info-soft border border-haven-info-border flex items-center justify-between">
+                  <div>
+                    <span className="text-xs font-bold text-haven-info uppercase tracking-wider">Information</span>
+                    <p className="text-[11px] text-haven-slate-500 mt-0.5">#EAF2FF / #2457C5</p>
+                  </div>
+                  <Building2 className="w-5 h-5 text-haven-info" />
+                </div>
                 <div className="p-4 rounded-xl bg-haven-warning-soft border border-haven-warning-border flex items-center justify-between">
                   <div>
-                    <span className="text-xs font-bold text-haven-warning uppercase tracking-wider">Warning / Attention</span>
-                    <p className="text-xs text-haven-charcoal-muted mt-0.5">Warm Amber (#B26A28)</p>
+                    <span className="text-xs font-bold text-haven-warning uppercase tracking-wider">Warning</span>
+                    <p className="text-[11px] text-haven-slate-500 mt-0.5">#FFF5E5 / #A96B12</p>
                   </div>
                   <AlertTriangle className="w-5 h-5 text-haven-warning" />
                 </div>
                 <div className="p-4 rounded-xl bg-haven-danger-soft border border-haven-danger-border flex items-center justify-between">
                   <div>
-                    <span className="text-xs font-bold text-haven-danger uppercase tracking-wider">Urgent / Alert</span>
-                    <p className="text-xs text-haven-charcoal-muted mt-0.5">Warm Brick (#A9433B)</p>
+                    <span className="text-xs font-bold text-haven-danger uppercase tracking-wider">Critical</span>
+                    <p className="text-[11px] text-haven-slate-500 mt-0.5">#FDEDEC / #C84D45</p>
                   </div>
                   <Activity className="w-5 h-5 text-haven-danger" />
                 </div>
-                <div className="p-4 rounded-xl bg-haven-info-soft border border-haven-info-border flex items-center justify-between">
+                <div className="p-4 rounded-xl bg-haven-neutral-soft border border-haven-neutral-border flex items-center justify-between">
                   <div>
-                    <span className="text-xs font-bold text-haven-info uppercase tracking-wider">Info / Routine</span>
-                    <p className="text-xs text-haven-charcoal-muted mt-0.5">Slate Blue (#466D85)</p>
+                    <span className="text-xs font-bold text-haven-neutral uppercase tracking-wider">Neutral</span>
+                    <p className="text-[11px] text-haven-slate-500 mt-0.5">#F1F5F9 / #64748B</p>
                   </div>
-                  <Building2 className="w-5 h-5 text-haven-info" />
+                  <ShieldCheck className="w-5 h-5 text-haven-neutral" />
                 </div>
               </div>
             </div>
@@ -324,11 +377,11 @@ export function DesignSystemPage() {
         {(activeTab === 'overview' || activeTab === 'components') && (
           <section className="space-y-10">
             <div className="border-b border-haven-border pb-4">
-              <h2 className="text-2xl font-bold tracking-tight text-haven-charcoal flex items-center gap-2.5">
-                <Layers className="w-6 h-6 text-haven-mocha" />
+              <h2 className="text-2xl font-bold tracking-tight text-haven-navy-900 flex items-center gap-2.5">
+                <Layers className="w-6 h-6 text-haven-blue-700" />
                 Custom Component System
               </h2>
-              <p className="text-sm text-haven-charcoal-muted">
+              <p className="text-sm text-haven-slate-500">
                 100% custom crafted with Tailwind CSS v4, TypeScript, React 19, and Lucide React.
               </p>
             </div>
@@ -355,15 +408,15 @@ export function DesignSystemPage() {
               <CardContent className="space-y-6">
                 {/* Variants */}
                 <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-haven-charcoal-muted mb-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-haven-slate-500 mb-3">
                     Variants
                   </h4>
                   <div className="flex flex-wrap items-center gap-3">
                     <Button variant="primary" isLoading={isBtnLoading} leftIcon={<Heart className="w-4 h-4" />}>
-                      Primary Mocha
+                      Primary Blue-700
                     </Button>
                     <Button variant="secondary" isLoading={isBtnLoading}>
-                      Secondary Greige
+                      Secondary Blue-100
                     </Button>
                     <Button variant="outline" isLoading={isBtnLoading} leftIcon={<Filter className="w-4 h-4" />}>
                       Outline
@@ -375,14 +428,14 @@ export function DesignSystemPage() {
                       Ghost
                     </Button>
                     <Button variant="danger" isLoading={isBtnLoading} leftIcon={<AlertTriangle className="w-4 h-4" />}>
-                      Danger Alert
+                      Critical Alert
                     </Button>
                   </div>
                 </div>
 
                 {/* Sizes */}
                 <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-haven-charcoal-muted mb-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-haven-slate-500 mb-3">
                     Sizes
                   </h4>
                   <div className="flex flex-wrap items-center gap-3">
@@ -410,8 +463,8 @@ export function DesignSystemPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <Badge variant="default">Default Taupe</Badge>
-                  <Badge variant="secondary">Secondary Greige</Badge>
+                  <Badge variant="default">Default Blue-100</Badge>
+                  <Badge variant="secondary">Secondary Slate</Badge>
                   <Badge variant="outline">Outline</Badge>
                   <Badge variant="success" dot>
                     Active / Resting
@@ -430,7 +483,7 @@ export function DesignSystemPage() {
                   <Badge size="sm" variant="success">
                     Small Tag
                   </Badge>
-                  <Badge size="md" variant="default" icon={<Heart className="w-3.5 h-3.5 mr-1 text-haven-mocha" />}>
+                  <Badge size="md" variant="default" icon={<Heart className="w-3.5 h-3.5 mr-1 text-haven-blue-700" />}>
                     Care Level: Memory
                   </Badge>
                   <Badge size="md" variant="outline" dot>
@@ -506,17 +559,17 @@ export function DesignSystemPage() {
                   <CardDescription>Sunrise Pavilion • Assisted Living</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2 text-xs text-haven-charcoal-muted">
-                    <Clock className="w-4 h-4 text-haven-taupe" />
+                  <div className="flex items-center gap-2 text-xs text-haven-slate-500">
+                    <Clock className="w-4 h-4 text-haven-slate-500" />
                     <span>Last medication check: 15 mins ago</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-haven-charcoal-muted">
+                  <div className="flex items-center gap-2 text-xs text-haven-slate-500">
                     <Heart className="w-4 h-4 text-haven-danger" />
                     <span>Heart rate: 72 bpm (Normal)</span>
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <span className="text-xs">Primary: Sarah Chen, RN</span>
+                  <span className="text-xs text-haven-slate-500">Primary: Sarah Chen, RN</span>
                   <Button variant="ghost" size="sm" rightIcon={<Eye className="w-3.5 h-3.5" />}>
                     Profile
                   </Button>
@@ -529,17 +582,17 @@ export function DesignSystemPage() {
                   <CardDescription>Garden Terrace • Memory Care</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2 text-xs text-haven-charcoal-muted">
-                    <BedDouble className="w-4 h-4 text-haven-taupe" />
+                  <div className="flex items-center gap-2 text-xs text-haven-slate-500">
+                    <BedDouble className="w-4 h-4 text-haven-slate-500" />
                     <span>Resting in quarters</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-haven-charcoal-muted">
+                  <div className="flex items-center gap-2 text-xs text-haven-slate-500">
                     <Activity className="w-4 h-4 text-haven-warning" />
                     <span>Hydration assistance requested</span>
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <span className="text-xs">Primary: Marcus Davies</span>
+                  <span className="text-xs text-haven-slate-500">Primary: Marcus Davies</span>
                   <Button variant="ghost" size="sm" rightIcon={<Eye className="w-3.5 h-3.5" />}>
                     Profile
                   </Button>
@@ -547,22 +600,22 @@ export function DesignSystemPage() {
               </Card>
 
               <Card variant="subtle">
-                <CardHeader action={<Badge variant="info">Room 108</Badge>}>
-                  <CardTitle>George Carver Jr.</CardTitle>
+                <CardHeader action={<Badge variant="info">Room 108-A</Badge>}>
+                  <CardTitle>George Washington Carver Jr.</CardTitle>
                   <CardDescription>Orchard Meadow • Skilled Nursing</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2 text-xs text-haven-charcoal-muted">
-                    <Calendar className="w-4 h-4 text-haven-taupe" />
+                  <div className="flex items-center gap-2 text-xs text-haven-slate-500">
+                    <Calendar className="w-4 h-4 text-haven-slate-500" />
                     <span>Physical therapy at 15:00</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-haven-charcoal-muted">
+                  <div className="flex items-center gap-2 text-xs text-haven-slate-500">
                     <ShieldCheck className="w-4 h-4 text-haven-success" />
                     <span>All dietary protocols verified</span>
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <span className="text-xs">Primary: David Kim, NP</span>
+                  <span className="text-xs text-haven-slate-500">Primary: David Kim, NP</span>
                   <Button variant="ghost" size="sm" rightIcon={<Eye className="w-3.5 h-3.5" />}>
                     Profile
                   </Button>
@@ -580,7 +633,7 @@ export function DesignSystemPage() {
               </CardHeader>
               <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Profile card skeleton */}
-                <div className="p-6 rounded-2xl border border-haven-border bg-haven-offwhite space-y-4">
+                <div className="p-6 rounded-2xl border border-haven-border bg-haven-slate-50 space-y-4">
                   <div className="flex items-center gap-3">
                     <Skeleton variant="circular" width={48} height={48} />
                     <div className="space-y-2 flex-1">
@@ -596,7 +649,7 @@ export function DesignSystemPage() {
                 </div>
 
                 {/* Table lines skeleton */}
-                <div className="p-6 rounded-2xl border border-haven-border bg-haven-offwhite space-y-3">
+                <div className="p-6 rounded-2xl border border-haven-border bg-haven-slate-50 space-y-3">
                   <Skeleton variant="text" width="40%" height={18} className="mb-4" />
                   <Skeleton variant="text" height={14} />
                   <Skeleton variant="text" height={14} width="90%" />
@@ -628,7 +681,7 @@ export function DesignSystemPage() {
 
                 <EmptyState
                   compact
-                  icon={<Heart className="text-haven-mocha" />}
+                  icon={<Heart className="text-haven-blue-700" />}
                   title="Daily Vitals Complete"
                   description="All afternoon check-ins for the Garden Terrace pavilion have been logged."
                   action={
@@ -647,11 +700,11 @@ export function DesignSystemPage() {
           <section className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-haven-border pb-4">
               <div>
-                <h2 className="text-2xl font-bold tracking-tight text-haven-charcoal flex items-center gap-2.5">
-                  <Users className="w-6 h-6 text-haven-mocha" />
+                <h2 className="text-2xl font-bold tracking-tight text-haven-navy-900 flex items-center gap-2.5">
+                  <Users className="w-6 h-6 text-haven-blue-700" />
                   Resident Care Directory (Table Demo)
                 </h2>
-                <p className="text-sm text-haven-charcoal-muted">
+                <p className="text-sm text-haven-slate-500">
                   Demonstrating Table, TableHeader, TableRow, TableCell, Badges, and filter controls.
                 </p>
               </div>
@@ -676,7 +729,7 @@ export function DesignSystemPage() {
                   selectSize="sm"
                 />
               </div>
-              <div className="text-xs text-haven-charcoal-muted ml-auto">
+              <div className="text-xs text-haven-slate-500 ml-auto">
                 Showing {filteredResidents.length} of {MOCK_RESIDENTS.length} residents
               </div>
             </div>
@@ -698,20 +751,20 @@ export function DesignSystemPage() {
                 <TableBody>
                   {filteredResidents.map((res) => (
                     <TableRow key={res.id}>
-                      <TableCell className="font-medium text-haven-charcoal">
+                      <TableCell className="font-medium text-haven-slate-900">
                         <div>
                           <div className="font-semibold">{res.name}</div>
-                          <div className="text-xs text-haven-charcoal-muted">
+                          <div className="text-xs text-haven-slate-500">
                             Age {res.age} • &quot;{res.preferredName}&quot;
                           </div>
                         </div>
                       </TableCell>
                       <TableCell>
-                        <div className="flex items-center gap-1.5 text-xs">
-                          <BedDouble className="w-3.5 h-3.5 text-haven-taupe" />
+                        <div className="flex items-center gap-1.5 text-xs text-haven-slate-900">
+                          <BedDouble className="w-3.5 h-3.5 text-haven-slate-500" />
                           <span>{res.room}</span>
                         </div>
-                        <div className="text-[11px] text-haven-charcoal-muted">{res.wing}</div>
+                        <div className="text-[11px] text-haven-slate-500">{res.wing}</div>
                       </TableCell>
                       <TableCell>
                         <Badge
@@ -752,12 +805,12 @@ export function DesignSystemPage() {
                             : 'With Family'}
                         </Badge>
                       </TableCell>
-                      <TableCell className="text-xs text-haven-charcoal-muted">
+                      <TableCell className="text-xs text-haven-slate-500">
                         {res.primaryNurse}
                       </TableCell>
-                      <TableCell className="text-xs text-haven-charcoal">
-                        <div className="flex items-center gap-1 text-haven-charcoal-muted">
-                          <Clock className="w-3 h-3 text-haven-taupe" />
+                      <TableCell className="text-xs text-haven-slate-900">
+                        <div className="flex items-center gap-1 text-haven-slate-500">
+                          <Clock className="w-3 h-3 text-haven-slate-500" />
                           <span>{res.lastCheckIn}</span>
                         </div>
                       </TableCell>
@@ -798,7 +851,7 @@ export function DesignSystemPage() {
               </Table>
             ) : (
               <EmptyState
-                icon={<Search className="text-haven-taupe" />}
+                icon={<Search className="text-haven-slate-500" />}
                 title="No residents match criteria"
                 description={`No active resident found for "${searchQuery}" in the selected facility wing.`}
                 action={
@@ -820,20 +873,20 @@ export function DesignSystemPage() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto border-t border-haven-border bg-haven-cream py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-haven-charcoal-muted">
+      <footer className="mt-auto border-t border-haven-border bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-haven-slate-500">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-haven-mocha text-haven-offwhite flex items-center justify-center font-bold text-[10px]">
+            <div className="w-6 h-6 rounded-md bg-haven-blue-700 text-white flex items-center justify-center font-bold text-[10px]">
               H
             </div>
             <span>
-              <strong>HAVEN</strong> — Elderly Care & Facility Management System
+              <strong className="text-haven-navy-900">HAVEN</strong> — Elderly Care &amp; Facility Management System
             </span>
           </div>
           <p className="italic">
             &quot;A safer, smarter and more caring place for every resident.&quot;
           </p>
-          <div>Frontend Design System • Tailwind CSS v4 • React 19</div>
+          <div>Frontend Design System v2.0 • Tailwind CSS v4 • React 19</div>
         </div>
       </footer>
     </div>

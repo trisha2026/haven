@@ -25,7 +25,7 @@ export function AppShell({ role }: AppShellProps) {
   const notificationsState = useNotifications(role);
 
   return (
-    <div className="min-h-screen bg-haven-offwhite text-haven-charcoal flex flex-col font-sans selection:bg-haven-taupe/30 selection:text-haven-charcoal">
+    <div className="min-h-screen bg-haven-blue-50 text-haven-slate-900 flex flex-col font-sans selection:bg-haven-blue-100 selection:text-haven-blue-700">
       {/* Persistent Sidebar (Tablet / Desktop) */}
       <Sidebar
         navigation={navigation}
@@ -66,10 +66,10 @@ export function AppShell({ role }: AppShellProps) {
         </main>
 
         {/* Shell Footer */}
-        <footer className="mt-auto border-t border-haven-border bg-haven-cream py-6 px-4 sm:px-8">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-haven-charcoal-muted">
+        <footer className="mt-auto border-t border-haven-border bg-white py-6 px-4 sm:px-8">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-haven-slate-500">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-haven-charcoal">HAVEN</span>
+              <span className="font-semibold text-haven-navy-900">HAVEN</span>
               <span>— Elderly Care &amp; Facility Management</span>
             </div>
             <p className="italic text-center sm:text-right">

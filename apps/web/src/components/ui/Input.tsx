@@ -49,7 +49,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="text-xs font-semibold uppercase tracking-wider text-haven-charcoal-muted flex items-center gap-1"
+            className="text-xs font-semibold uppercase tracking-wider text-haven-slate-500 flex items-center gap-1"
           >
             <span>{label}</span>
             {required && <span className="text-haven-danger font-bold">*</span>}
@@ -58,7 +58,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
         <div className="relative flex items-center w-full">
           {leftIcon && (
-            <div className="absolute left-3 flex items-center pointer-events-none text-haven-charcoal-muted">
+            <div className="absolute left-3 flex items-center pointer-events-none text-haven-slate-500">
               {leftIcon}
             </div>
           )}
@@ -73,23 +73,23 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               hasError ? errorId : helperText ? helperId : undefined
             }
             className={cn(
-              'w-full bg-haven-cream text-haven-charcoal placeholder:text-haven-charcoal-muted/60',
+              'w-full bg-white text-haven-slate-900 placeholder:text-haven-slate-500/60',
               'border transition-colors duration-150',
-              'focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-haven-offwhite',
-              'disabled:bg-haven-greige-soft/60 disabled:text-haven-charcoal-muted/70 disabled:cursor-not-allowed',
+              'focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-white',
+              'disabled:bg-haven-slate-50 disabled:text-haven-slate-500/70 disabled:cursor-not-allowed',
               sizes[inputSize],
               leftIcon ? (inputSize === 'sm' ? 'pl-8' : inputSize === 'lg' ? 'pl-11' : 'pl-10') : '',
               rightIcon ? (inputSize === 'sm' ? 'pr-8' : inputSize === 'lg' ? 'pr-11' : 'pr-10') : '',
               hasError
-                ? 'border-haven-danger text-haven-charcoal focus:border-haven-danger focus:ring-haven-danger/30'
-                : 'border-haven-border hover:border-haven-taupe focus:border-haven-mocha focus:ring-haven-mocha/30',
+                ? 'border-haven-danger text-haven-slate-900 focus:border-haven-danger focus:ring-haven-danger/30'
+                : 'border-haven-border hover:border-haven-blue-500/40 focus:border-haven-blue-700 focus:ring-haven-blue-700/25',
               className
             )}
             {...props}
           />
 
           {rightIcon && (
-            <div className="absolute right-3 flex items-center text-haven-charcoal-muted">
+            <div className="absolute right-3 flex items-center text-haven-slate-500">
               {rightIcon}
             </div>
           )}
@@ -102,7 +102,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
 
         {!error && helperText && (
-          <p id={helperId} className="text-xs text-haven-charcoal-muted">
+          <p id={helperId} className="text-xs text-haven-slate-500">
             {helperText}
           </p>
         )}

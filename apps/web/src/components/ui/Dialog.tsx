@@ -159,7 +159,7 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps
       >
         {/* Scrim / Backdrop */}
         <div
-          className="fixed inset-0 bg-haven-charcoal/40 backdrop-blur-xs animate-fade-in"
+          className="fixed inset-0 bg-haven-slate-900/40 backdrop-blur-xs animate-fade-in"
           onClick={() => onOpenChange(false)}
           aria-hidden="true"
         />
@@ -173,9 +173,9 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps
           aria-describedby={descriptionId}
           tabIndex={-1}
           className={cn(
-            'relative w-full z-10 bg-haven-cream rounded-2xl border border-haven-border shadow-haven-modal',
+            'relative w-full z-10 bg-white rounded-2xl border border-haven-border shadow-haven-modal',
             'max-h-[calc(100dvh-2rem)] overflow-y-auto haven-scroll focus:outline-none',
-            'p-6 sm:p-7 text-haven-charcoal animate-scale-in',
+            'p-6 sm:p-7 text-haven-slate-900 animate-scale-in',
             maxWidths[maxWidth],
             className
           )}
@@ -187,7 +187,7 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps
             <button
               type="button"
               onClick={() => onOpenChange(false)}
-              className="absolute right-4 top-4 p-1.5 rounded-lg text-haven-charcoal-muted hover:text-haven-charcoal hover:bg-haven-greige/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-mocha/30 cursor-pointer"
+              className="absolute right-4 top-4 p-1.5 rounded-lg text-haven-slate-500 hover:text-haven-slate-900 hover:bg-haven-slate-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue-700/30 cursor-pointer"
               aria-label="Close dialog"
             >
               <X className="w-4 h-4" />
@@ -223,7 +223,7 @@ export const DialogTitle = React.forwardRef<
     <h2
       ref={ref}
       id={titleId}
-      className={cn('text-xl font-semibold text-haven-charcoal tracking-tight', className)}
+      className={cn('text-xl font-semibold text-haven-slate-900 tracking-tight', className)}
       {...props}
     >
       {children}
@@ -241,7 +241,7 @@ export const DialogDescription = React.forwardRef<
     <p
       ref={ref}
       id={descriptionId}
-      className={cn('text-sm text-haven-charcoal-muted leading-relaxed', className)}
+      className={cn('text-sm text-haven-slate-500 leading-relaxed', className)}
       {...props}
     >
       {children}

@@ -17,14 +17,14 @@ const SIZES: Record<AvatarSize, string> = {
   lg: 'h-12 w-12 text-sm',
 };
 
-/** Initials avatar in HAVEN's warm mocha palette. Decorative by default. */
+/** Initials avatar in HAVEN's Royal Blue palette. */
 export function Avatar({ initials, size = 'md', status, className, ...props }: AvatarProps) {
   return (
     <span
       aria-hidden="true"
       className={cn(
         'relative inline-flex shrink-0 select-none items-center justify-center rounded-full',
-        'bg-haven-mocha font-semibold tracking-wide text-haven-offwhite ring-2 ring-haven-cream',
+        'bg-haven-blue-700 font-semibold tracking-wide text-white ring-2 ring-white shadow-sm',
         SIZES[size],
         className
       )}
@@ -34,7 +34,7 @@ export function Avatar({ initials, size = 'md', status, className, ...props }: A
       {status && (
         <span
           className={cn(
-            'absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full ring-2 ring-haven-cream',
+            'absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full ring-2 ring-white',
             status === 'online' ? 'bg-haven-success' : 'bg-haven-warning'
           )}
         />

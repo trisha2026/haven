@@ -1,46 +1,73 @@
 @import "tailwindcss";
 
 @theme {
-  /* Core Brand Colors */
-  --color-haven-offwhite: #F7F6F2;
-  --color-haven-greige: #D7D0C5;
-  --color-haven-taupe: #A99A89;
-  --color-haven-mocha: #79675A;
-  --color-haven-charcoal: #393633;
+  /* =========================================================================
+     HAVEN Design System v2.0 (Royal Blue & Ice Blue)
+     ========================================================================= */
 
-  /* Extended brand shades for surfaces, borders, and depth */
-  --color-haven-cream: #FCFAF6;
-  --color-haven-greige-soft: #EFECE6;
-  --color-haven-greige-medium: #CDC5B8;
-  --color-haven-taupe-light: #C4B8A9;
-  --color-haven-taupe-dark: #8E7E6E;
-  --color-haven-mocha-light: #8E7B6D;
-  --color-haven-mocha-dark: #625247;
-  --color-haven-charcoal-light: #524F4B;
-  --color-haven-charcoal-muted: #736E67;
-  --color-haven-charcoal-dark: #22201E;
+  /* Exact Brand Tokens */
+  --color-haven-navy-900: #173B70;
+  --color-haven-blue-700: #2457C5;
+  --color-haven-blue-500: #3979D8;
+  --color-haven-blue-100: #E4EDFF;
+  --color-haven-blue-50: #F4F8FF;
 
-  /* Structural border tones */
-  --color-haven-border: #D7D0C5;
-  --color-haven-border-light: #E8E3DB;
-  --color-haven-border-dark: #BCB1A3;
+  /* Exact Neutral Tokens */
+  --color-haven-white: #FFFFFF;
+  --color-haven-slate-50: #F8FAFC;
+  --color-haven-slate-100: #F1F5F9;
+  --color-haven-slate-500: #64748B;
+  --color-haven-slate-700: #334155;
+  --color-haven-slate-900: #172B4D;
+  --color-haven-border: #E6ECF4;
+  --color-haven-border-light: #F1F5F9;
+  --color-haven-border-dark: #CBD5E1;
 
-  /* Calming warm status tones (avoiding clinical/hospital neon) */
-  --color-haven-success: #3E7356;
-  --color-haven-success-soft: #EBF4EE;
-  --color-haven-success-border: #BCD8C6;
+  /* Exact Status Tokens (Background & Foreground pairs) */
+  --color-haven-success: #16856B;
+  --color-haven-success-soft: #E8F5EF;
+  --color-haven-success-border: #C8E8DC;
 
-  --color-haven-warning: #B26A28;
-  --color-haven-warning-soft: #FDF3E7;
-  --color-haven-warning-border: #EDD0B1;
+  --color-haven-information: #2457C5;
+  --color-haven-information-soft: #EAF2FF;
+  --color-haven-information-border: #C8DCFF;
 
-  --color-haven-danger: #A9433B;
-  --color-haven-danger-soft: #FBF0EF;
-  --color-haven-danger-border: #EEC3C0;
+  --color-haven-info: #2457C5;
+  --color-haven-info-soft: #EAF2FF;
+  --color-haven-info-border: #C8DCFF;
 
-  --color-haven-info: #466D85;
-  --color-haven-info-soft: #EDF4F8;
-  --color-haven-info-border: #BDD4E4;
+  --color-haven-warning: #A96B12;
+  --color-haven-warning-soft: #FFF5E5;
+  --color-haven-warning-border: #FCE2BA;
+
+  --color-haven-critical: #C84D45;
+  --color-haven-critical-soft: #FDEDEC;
+  --color-haven-critical-border: #F9CBC7;
+
+  --color-haven-danger: #C84D45;
+  --color-haven-danger-soft: #FDEDEC;
+  --color-haven-danger-border: #F9CBC7;
+
+  --color-haven-neutral: #64748B;
+  --color-haven-neutral-soft: #F1F5F9;
+  --color-haven-neutral-border: #E2E8F0;
+
+  /* Semantic & Backward-Compatible Aliases (mapped to approved v2.0 palette) */
+  --color-haven-offwhite: #F4F8FF;
+  --color-haven-cream: #FFFFFF;
+  --color-haven-greige: #E6ECF4;
+  --color-haven-greige-soft: #E4EDFF;
+  --color-haven-greige-medium: #CBD5E1;
+  --color-haven-taupe: #3979D8;
+  --color-haven-taupe-light: #85B1F2;
+  --color-haven-taupe-dark: #173B70;
+  --color-haven-mocha: #2457C5;
+  --color-haven-mocha-light: #3979D8;
+  --color-haven-mocha-dark: #173B70;
+  --color-haven-charcoal: #172B4D;
+  --color-haven-charcoal-light: #334155;
+  --color-haven-charcoal-muted: #64748B;
+  --color-haven-charcoal-dark: #0F1E36;
 
   /* Typography */
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -54,12 +81,12 @@
   --radius-2xl: 28px;
   --radius-full: 9999px;
 
-  /* Shadows - Warm and diffuse */
-  --shadow-haven-sm: 0 1px 2px 0 rgba(57, 54, 51, 0.05);
-  --shadow-haven-card: 0 2px 8px -2px rgba(57, 54, 51, 0.06), 0 1px 4px -1px rgba(57, 54, 51, 0.04);
-  --shadow-haven-hover: 0 12px 24px -6px rgba(57, 54, 51, 0.08), 0 4px 12px -2px rgba(57, 54, 51, 0.04);
-  --shadow-haven-modal: 0 24px 48px -12px rgba(57, 54, 51, 0.18), 0 12px 24px -6px rgba(57, 54, 51, 0.1);
-  --shadow-haven-popover: 0 16px 36px -10px rgba(57, 54, 51, 0.16), 0 4px 12px -4px rgba(57, 54, 51, 0.08);
+  /* Shadows - Light, clean, subtle slate/navy shadows */
+  --shadow-haven-sm: 0 1px 2px 0 rgba(23, 43, 77, 0.04);
+  --shadow-haven-card: 0 1px 3px 0 rgba(23, 43, 77, 0.05), 0 1px 2px -1px rgba(23, 43, 77, 0.03);
+  --shadow-haven-hover: 0 10px 20px -5px rgba(23, 43, 77, 0.08), 0 4px 8px -2px rgba(23, 43, 77, 0.04);
+  --shadow-haven-modal: 0 20px 35px -10px rgba(23, 43, 77, 0.16), 0 8px 16px -4px rgba(23, 43, 77, 0.08);
+  --shadow-haven-popover: 0 12px 28px -6px rgba(23, 43, 77, 0.12), 0 4px 10px -2px rgba(23, 43, 77, 0.06);
 
   /* Layout dimensions (application shell) */
   --spacing-sidebar: 248px;
@@ -96,8 +123,8 @@
 
 body {
   margin: 0;
-  background-color: var(--color-haven-offwhite);
-  color: var(--color-haven-charcoal);
+  background-color: var(--color-haven-blue-50);
+  color: var(--color-haven-slate-900);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -114,26 +141,26 @@ body {
   }
 }
 
-/* Custom scrollbar matching Haven theme */
+/* Custom scrollbar matching Haven Blue theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-haven-offwhite);
+  background: var(--color-haven-blue-50);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-haven-greige);
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-haven-taupe);
+  background: #94A3B8;
 }
 
 /* Thin, unobtrusive scrollbar for navigation rails and panels */
 .haven-scroll {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-haven-greige) transparent;
+  scrollbar-color: #CBD5E1 transparent;
 }
 .haven-scroll::-webkit-scrollbar {
   width: 6px;

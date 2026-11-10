@@ -39,9 +39,9 @@ const CATEGORY_COLORS: Record<NotificationCategory, string> = {
   incident: 'bg-haven-danger-soft text-haven-danger border-haven-danger-border',
   medication: 'bg-haven-warning-soft text-haven-warning border-haven-warning-border',
   staffing: 'bg-haven-info-soft text-haven-info border-haven-info-border',
-  access: 'bg-haven-greige-soft text-haven-mocha-dark border-haven-border',
+  access: 'bg-haven-slate-100 text-haven-blue-700 border-haven-border',
   task: 'bg-haven-success-soft text-haven-success border-haven-success-border',
-  system: 'bg-haven-greige-soft text-haven-charcoal-muted border-haven-border',
+  system: 'bg-haven-slate-100 text-haven-slate-500 border-haven-border',
 };
 
 export function NotificationPanel({
@@ -82,16 +82,16 @@ export function NotificationPanel({
       aria-label="Notifications Panel"
       className={cn(
         'absolute right-0 top-full mt-2 w-[calc(100vw-2rem)] sm:w-96 max-w-sm',
-        'bg-haven-cream rounded-2xl border border-haven-border shadow-haven-popover z-50',
-        'flex flex-col overflow-hidden text-haven-charcoal animate-pop-in focus:outline-none'
+        'bg-white rounded-2xl border border-haven-border shadow-haven-popover z-50',
+        'flex flex-col overflow-hidden text-haven-slate-900 animate-pop-in focus:outline-none'
       )}
     >
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-haven-border px-4 py-3 bg-haven-cream">
+      <div className="flex items-center justify-between border-b border-haven-border px-4 py-3 bg-white">
         <div className="flex items-center gap-2">
-          <h3 className="text-sm font-bold text-haven-charcoal">Notifications</h3>
+          <h3 className="text-sm font-bold text-haven-slate-900">Notifications</h3>
           {unreadCount > 0 && (
-            <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-haven-mocha text-haven-offwhite">
+            <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-haven-blue-700 text-white">
               {unreadCount} new
             </span>
           )}
@@ -101,7 +101,7 @@ export function NotificationPanel({
             <button
               type="button"
               onClick={markAllAsRead}
-              className="p-1.5 rounded-lg text-haven-charcoal-muted hover:text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer"
+              className="p-1.5 rounded-lg text-haven-slate-500 hover:text-haven-slate-900 hover:bg-haven-slate-100 transition-colors cursor-pointer"
               title="Mark all as read"
               aria-label="Mark all notifications as read"
             >
@@ -111,7 +111,7 @@ export function NotificationPanel({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-haven-charcoal-muted hover:text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-haven-slate-500 hover:text-haven-slate-900 hover:bg-haven-slate-100 transition-colors cursor-pointer"
             aria-label="Close notification panel"
           >
             <X className="w-4 h-4" />
@@ -120,15 +120,15 @@ export function NotificationPanel({
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex items-center gap-1 px-4 py-2 border-b border-haven-border-light bg-haven-offwhite/50 text-xs">
+      <div className="flex items-center gap-1 px-4 py-2 border-b border-haven-border-light bg-haven-slate-50/60 text-xs">
         <button
           type="button"
           onClick={() => setFilter('all')}
           className={cn(
             'px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer',
             filter === 'all'
-              ? 'bg-haven-greige-soft text-haven-charcoal font-semibold shadow-haven-sm'
-              : 'text-haven-charcoal-muted hover:text-haven-charcoal'
+              ? 'bg-haven-blue-100 text-haven-blue-700 font-semibold shadow-haven-sm'
+              : 'text-haven-slate-500 hover:text-haven-slate-900'
           )}
         >
           All ({notifications.length})
@@ -139,8 +139,8 @@ export function NotificationPanel({
           className={cn(
             'px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer',
             filter === 'unread'
-              ? 'bg-haven-greige-soft text-haven-charcoal font-semibold shadow-haven-sm'
-              : 'text-haven-charcoal-muted hover:text-haven-charcoal'
+              ? 'bg-haven-blue-100 text-haven-blue-700 font-semibold shadow-haven-sm'
+              : 'text-haven-slate-500 hover:text-haven-slate-900'
           )}
         >
           Unread ({unreadCount})
@@ -149,7 +149,7 @@ export function NotificationPanel({
           <button
             type="button"
             onClick={clearAll}
-            className="ml-auto text-[11px] text-haven-charcoal-muted hover:text-haven-danger transition-colors cursor-pointer"
+            className="ml-auto text-[11px] text-haven-slate-500 hover:text-haven-danger transition-colors cursor-pointer"
           >
             Clear all
           </button>
@@ -157,7 +157,7 @@ export function NotificationPanel({
           <button
             type="button"
             onClick={restoreSamples}
-            className="ml-auto flex items-center gap-1 text-[11px] text-haven-mocha hover:text-haven-mocha-dark transition-colors cursor-pointer font-medium"
+            className="ml-auto flex items-center gap-1 text-[11px] text-haven-blue-700 hover:text-haven-navy-900 transition-colors cursor-pointer font-medium"
           >
             <RotateCcw className="w-3 h-3" />
             Reset demo
@@ -185,8 +185,8 @@ export function NotificationPanel({
                 className={cn(
                   'group flex items-start gap-3 p-3.5 transition-colors cursor-pointer relative text-left',
                   ntf.read
-                    ? 'bg-haven-cream/60 hover:bg-haven-greige-soft/50 text-haven-charcoal-light'
-                    : 'bg-haven-offwhite hover:bg-haven-greige-soft text-haven-charcoal'
+                    ? 'bg-white hover:bg-haven-slate-50 text-haven-slate-700'
+                    : 'bg-haven-blue-50/50 hover:bg-haven-blue-100/40 text-haven-slate-900'
                 )}
               >
                 {/* Status Icon */}
@@ -205,16 +205,16 @@ export function NotificationPanel({
                     <p
                       className={cn(
                         'text-xs tracking-tight line-clamp-1',
-                        ntf.read ? 'font-medium text-haven-charcoal-light' : 'font-bold text-haven-charcoal'
+                        ntf.read ? 'font-medium text-haven-slate-700' : 'font-bold text-haven-slate-900'
                       )}
                     >
                       {ntf.title}
                     </p>
-                    <span className="text-[10px] text-haven-charcoal-muted shrink-0">
+                    <span className="text-[10px] text-haven-slate-500 shrink-0">
                       {ntf.timeAgo}
                     </span>
                   </div>
-                  <p className="text-xs text-haven-charcoal-muted line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-haven-slate-500 line-clamp-2 leading-relaxed">
                     {ntf.message}
                   </p>
                 </div>
@@ -224,7 +224,7 @@ export function NotificationPanel({
                   {!ntf.read && (
                     <span
                       aria-hidden="true"
-                      className="w-2 h-2 rounded-full bg-haven-mocha shrink-0 group-hover:hidden"
+                      className="w-2 h-2 rounded-full bg-haven-blue-700 shrink-0 group-hover:hidden"
                     />
                   )}
                   <button
@@ -233,7 +233,7 @@ export function NotificationPanel({
                       e.stopPropagation();
                       dismiss(ntf.id);
                     }}
-                    className="p-1 rounded text-haven-charcoal-muted hover:text-haven-charcoal hover:bg-haven-greige-soft transition-colors cursor-pointer hidden group-hover:inline-flex"
+                    className="p-1 rounded text-haven-slate-500 hover:text-haven-slate-900 hover:bg-haven-slate-100 transition-colors cursor-pointer hidden group-hover:inline-flex"
                     aria-label="Dismiss notification"
                   >
                     <X className="w-3.5 h-3.5" />
@@ -244,12 +244,12 @@ export function NotificationPanel({
           })
         ) : (
           <div className="py-12 px-4 text-center space-y-3">
-            <div className="w-10 h-10 rounded-full bg-haven-greige-soft text-haven-taupe flex items-center justify-center mx-auto">
+            <div className="w-10 h-10 rounded-full bg-haven-slate-100 text-haven-slate-500 flex items-center justify-center mx-auto">
               <Bell className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-haven-charcoal">No notifications</p>
-              <p className="text-[11px] text-haven-charcoal-muted mt-0.5">
+              <p className="text-xs font-semibold text-haven-slate-900">No notifications</p>
+              <p className="text-[11px] text-haven-slate-500 mt-0.5">
                 {filter === 'unread'
                   ? 'All pending notifications have been marked as read.'
                   : 'Your notification inbox is currently clear.'}
@@ -259,7 +259,7 @@ export function NotificationPanel({
               <button
                 type="button"
                 onClick={restoreSamples}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-haven-offwhite border border-haven-border text-haven-mocha hover:bg-haven-greige-soft cursor-pointer mx-auto transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white border border-haven-border text-haven-blue-700 hover:bg-haven-slate-50 cursor-pointer mx-auto transition-colors"
               >
                 <RotateCcw className="w-3 h-3" />
                 Restore sample notifications
@@ -270,7 +270,7 @@ export function NotificationPanel({
       </div>
 
       {/* Footer */}
-      <div className="p-2 border-t border-haven-border bg-haven-offwhite/80 text-center">
+      <div className="p-2 border-t border-haven-border bg-haven-slate-50 text-center">
         <button
           type="button"
           onClick={() => {
@@ -278,7 +278,7 @@ export function NotificationPanel({
             const role = filteredNotifications[0]?.href?.split('/')[1] || 'admin';
             navigate(`/${role}/notifications`);
           }}
-          className="text-xs font-medium text-haven-mocha hover:text-haven-mocha-dark transition-colors cursor-pointer"
+          className="text-xs font-medium text-haven-blue-700 hover:text-haven-navy-900 transition-colors cursor-pointer"
         >
           View all notifications &amp; audit history →
         </button>
