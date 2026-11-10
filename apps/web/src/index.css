@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  /* Core Brand Colors */
+  --color-haven-offwhite: #F7F6F2;
+  --color-haven-greige: #D7D0C5;
+  --color-haven-taupe: #A99A89;
+  --color-haven-mocha: #79675A;
+  --color-haven-charcoal: #393633;
+
+  /* Extended brand shades for surfaces, borders, and depth */
+  --color-haven-cream: #FCFAF6;
+  --color-haven-greige-soft: #EFECE6;
+  --color-haven-greige-medium: #CDC5B8;
+  --color-haven-taupe-light: #C4B8A9;
+  --color-haven-taupe-dark: #8E7E6E;
+  --color-haven-mocha-light: #8E7B6D;
+  --color-haven-mocha-dark: #625247;
+  --color-haven-charcoal-light: #524F4B;
+  --color-haven-charcoal-muted: #736E67;
+  --color-haven-charcoal-dark: #22201E;
+
+  /* Structural border tones */
+  --color-haven-border: #D7D0C5;
+  --color-haven-border-light: #E8E3DB;
+  --color-haven-border-dark: #BCB1A3;
+
+  /* Calming warm status tones (avoiding clinical/hospital neon) */
+  --color-haven-success: #3E7356;
+  --color-haven-success-soft: #EBF4EE;
+  --color-haven-success-border: #BCD8C6;
+
+  --color-haven-warning: #B26A28;
+  --color-haven-warning-soft: #FDF3E7;
+  --color-haven-warning-border: #EDD0B1;
+
+  --color-haven-danger: #A9433B;
+  --color-haven-danger-soft: #FBF0EF;
+  --color-haven-danger-border: #EEC3C0;
+
+  --color-haven-info: #466D85;
+  --color-haven-info-soft: #EDF4F8;
+  --color-haven-info-border: #BDD4E4;
+
+  /* Typography */
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-full: 9999px;
+
+  /* Shadows - Warm and diffuse */
+  --shadow-haven-sm: 0 1px 2px 0 rgba(57, 54, 51, 0.05);
+  --shadow-haven-card: 0 2px 8px -2px rgba(57, 54, 51, 0.06), 0 1px 4px -1px rgba(57, 54, 51, 0.04);
+  --shadow-haven-hover: 0 12px 24px -6px rgba(57, 54, 51, 0.08), 0 4px 12px -2px rgba(57, 54, 51, 0.04);
+  --shadow-haven-modal: 0 24px 48px -12px rgba(57, 54, 51, 0.18), 0 12px 24px -6px rgba(57, 54, 51, 0.1);
+  --shadow-haven-popover: 0 16px 36px -10px rgba(57, 54, 51, 0.16), 0 4px 12px -4px rgba(57, 54, 51, 0.08);
+
+  /* Layout dimensions (application shell) */
+  --spacing-sidebar: 248px;
+  --spacing-sidebar-collapsed: 76px;
+  --spacing-topbar: 68px;
+
+  /* Motion */
+  --animate-fade-in: haven-fade-in 160ms ease-out both;
+  --animate-scale-in: haven-scale-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-pop-in: haven-pop-in 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-slide-in-left: haven-slide-in-left 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes haven-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes haven-scale-in {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes haven-pop-in {
+    from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes haven-slide-in-left {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-haven-offwhite);
+  color: var(--color-haven-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar matching Haven theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-haven-offwhite);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-haven-greige);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-haven-taupe);
+}
+
+/* Thin, unobtrusive scrollbar for navigation rails and panels */
+.haven-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-haven-greige) transparent;
+}
+.haven-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.haven-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
