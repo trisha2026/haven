@@ -155,7 +155,7 @@ export function PlaceholderPage({ role, title: overrideTitle, description: overr
               </CardDescription>
             </div>
             <Badge variant="secondary" size="sm">
-              Willow Creek Care Residence
+              Anandam Care Residence, Bengaluru
             </Badge>
           </div>
         </CardHeader>

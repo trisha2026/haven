@@ -135,7 +135,7 @@ export function DoctorDashboardPage() {
             <div className="flex items-baseline justify-between mt-2">
               <span className="text-2xl font-bold text-haven-slate-900">Valid</span>
               <Badge variant="info" size="sm">
-                HIPAA / GDPR
+                DPDP / NMC
               </Badge>
             </div>
             <p className="text-[11px] text-haven-slate-500 mt-1">Full audit trail maintained</p>
@@ -215,7 +215,7 @@ export function DoctorDashboardPage() {
                   <span className="text-[10px] text-haven-danger">1h 45m ago</span>
                 </div>
                 <p className="text-xs text-haven-slate-900">
-                  George Washington Carver Jr. (Room 108-A). Physical therapy consult recommended.
+                  Raghavendra Kulkarni (Room 108-A). Physical therapy consult recommended.
                 </p>
                 <Button
                   variant="danger"
@@ -229,7 +229,7 @@ export function DoctorDashboardPage() {
 
               <div className="p-3 rounded-xl bg-haven-warning-soft border border-haven-warning-border space-y-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-haven-warning">Lab Result: Arthur Pendelton</span>
+                  <span className="text-xs font-bold text-haven-warning">Lab Result: Vikram Hegde</span>
                   <span className="text-[10px] text-haven-warning">2h ago</span>
                 </div>
                 <p className="text-xs text-haven-slate-900">
@@ -247,7 +247,7 @@ export function DoctorDashboardPage() {
 
               <div className="p-3 rounded-xl bg-haven-slate-50 border border-haven-border space-y-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-haven-slate-900">Access Granted: Martha Higgins</span>
+                  <span className="text-xs font-bold text-haven-slate-900">Access Granted: Nandini Iyer</span>
                   <span className="text-[10px] text-haven-slate-500">45m ago</span>
                 </div>
                 <p className="text-xs text-haven-slate-500">

@@ -35,7 +35,7 @@ export function AdminDashboardPage() {
       <div className="flex items-center justify-between text-xs text-haven-slate-500 px-1 -mt-4">
         <span className="flex items-center gap-1.5">
           <span className="w-2 h-2 rounded-full bg-haven-success" />
-          <span>Demonstration data · Simulated operations feed (Willow Creek Residence)</span>
+          <span>Demonstration data · Simulated operations feed (Anandam Care Residence, Bengaluru)</span>
         </span>
 
         <Button

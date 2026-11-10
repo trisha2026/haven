@@ -110,7 +110,7 @@ export function AdminWelcomeHeader() {
 
               <span className="inline-flex items-center gap-1.5 text-xs text-haven-success bg-haven-success-soft px-2.5 py-1 rounded-full border border-haven-success-border font-medium">
                 <span className="w-2 h-2 rounded-full bg-haven-success animate-pulse" />
-                Willow Creek (4 Wings Simulated)
+                Anandam Residence (4 Wings Simulated)
               </span>
             </div>
 
@@ -121,7 +121,7 @@ export function AdminWelcomeHeader() {
 
             {/* Subtitle / Context */}
             <p className="text-sm text-haven-slate-500 leading-relaxed">
-              Willow Creek Residence operational pulse (simulated demonstration data): <strong>58 residents</strong> in care across 4 wings.
+              Anandam Care Residence operational pulse (simulated demonstration data): <strong>58 residents</strong> in care across 4 wings.
               Day Shift is active with 18 personnel on duty (100% scheduled coverage). 6 operational items require administrative attention in the Priority Queue below.
             </p>
           </div>
@@ -234,7 +234,7 @@ export function AdminWelcomeHeader() {
                 />
                 <Input
                   label="Emergency Contact Phone"
-                  placeholder="(555) 019-2849"
+                  placeholder="+91 98450 12849"
                   value={residentContact}
                   onChange={(e) => setResidentContact(e.target.value)}
                 />

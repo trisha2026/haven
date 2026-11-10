@@ -1,6 +1,8 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 import { AdminLayout, CaregiverLayout, DoctorLayout } from './layouts/index.ts';
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage.tsx';
+import { AdminResidentsPage } from './pages/admin/AdminResidentsPage.tsx';
+import { AdminResidentProfilePage } from './pages/admin/AdminResidentProfilePage.tsx';
 import { CaregiverDashboardPage } from './pages/caregiver/CaregiverDashboardPage.tsx';
 import { DoctorDashboardPage } from './pages/doctor/DoctorDashboardPage.tsx';
 import { PlaceholderPage } from './pages/PlaceholderPage.tsx';
@@ -27,7 +29,8 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="/admin/dashboard" replace /> },
       { path: 'dashboard', element: <AdminDashboardPage /> },
-      { path: 'residents', element: <PlaceholderPage role="admin" /> },
+      { path: 'residents', element: <AdminResidentsPage /> },
+      { path: 'residents/:id', element: <AdminResidentProfilePage /> },
       { path: 'caregivers', element: <PlaceholderPage role="admin" /> },
       { path: 'doctors', element: <PlaceholderPage role="admin" /> },
       { path: 'rooms', element: <PlaceholderPage role="admin" /> },

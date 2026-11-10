@@ -33,7 +33,14 @@ export function useBreadcrumbs(role: UserRole): BreadcrumbItem[] {
     if (entry.group && entry.group.id !== 'overview') {
       crumbs.push({ label: entry.group.label });
     }
-    crumbs.push({ label: entry.item.label, current: true });
+
+    if (pathname !== entry.item.path) {
+      crumbs.push({ label: entry.item.label, href: entry.item.path });
+      crumbs.push({ label: 'Resident Profile', current: true });
+    } else {
+      crumbs.push({ label: entry.item.label, current: true });
+    }
+
     return crumbs;
   }, [role, pathname]);
 }

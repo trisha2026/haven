@@ -220,7 +220,7 @@ export function CaregiverDashboardPage() {
               <div className="p-3 rounded-xl bg-haven-warning-soft border border-haven-warning-border flex items-start gap-3">
                 <Clock className="w-4 h-4 text-haven-warning mt-0.5 shrink-0" />
                 <div className="min-w-0 text-xs">
-                  <p className="font-semibold text-haven-warning">Arthur Pendelton — Hydration Round</p>
+                  <p className="font-semibold text-haven-warning">Vikram Hegde — Hydration Round</p>
                   <p className="text-haven-slate-500">Assisted hydration due at 13:45</p>
                 </div>
               </div>
@@ -228,7 +228,7 @@ export function CaregiverDashboardPage() {
               <div className="p-3 rounded-xl bg-haven-warning-soft border border-haven-warning-border flex items-start gap-3">
                 <Pill className="w-4 h-4 text-haven-warning mt-0.5 shrink-0" />
                 <div className="min-w-0 text-xs">
-                  <p className="font-semibold text-haven-warning">Eleanor Vance — Lisinopril 10mg</p>
+                  <p className="font-semibold text-haven-warning">Ananya Sharma — Lisinopril 10mg</p>
                   <p className="text-haven-slate-500">Room 204-B scheduled for 14:00</p>
                 </div>
               </div>

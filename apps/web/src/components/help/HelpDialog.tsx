@@ -62,7 +62,7 @@ export function HelpDialog({ open, onOpenChange }: HelpDialogProps) {
               </div>
               <div className="p-3 rounded-xl border border-haven-border bg-haven-slate-50 space-y-1">
                 <p className="text-xs font-bold text-haven-slate-900">Pharmacy &amp; Medication Vault</p>
-                <p className="text-xs font-mono font-semibold text-haven-slate-900">Ext. 1104 · Willow Creek Rx</p>
+                <p className="text-xs font-mono font-semibold text-haven-slate-900">Ext. 1104 · Anandam Central Pharmacy</p>
                 <p className="text-[11px] text-haven-slate-500">Emergency dose dispense &amp; stock verification</p>
               </div>
               <div className="p-3 rounded-xl border border-haven-border bg-haven-slate-50 space-y-1">

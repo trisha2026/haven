@@ -29,13 +29,13 @@ interface MockStaffMember {
 }
 
 const MOCK_STAFF: MockStaffMember[] = [
-  { id: 'CG-0142', name: 'Sarah Chen', role: 'Caregiver', detail: 'Senior Caregiver · Garden Terrace' },
-  { id: 'CG-0118', name: 'Marcus Davies', role: 'Caregiver', detail: 'LPN · Sunrise Pavilion' },
-  { id: 'CG-0156', name: 'Elena Rostova', role: 'Caregiver', detail: 'RN · Highland Haven' },
-  { id: 'CG-0163', name: 'Priya Nair', role: 'Caregiver', detail: 'Care Assistant · Orchard Meadow' },
-  { id: 'DR-0031', name: 'Dr. Rahul Mehta', role: 'Doctor', detail: 'Consultant Geriatrician' },
-  { id: 'DR-0044', name: 'Dr. Amelia Ward', role: 'Doctor', detail: 'Cardiologist · Visiting' },
-  { id: 'NP-0012', name: 'David Kim', role: 'Doctor', detail: 'Nurse Practitioner · Skilled Nursing' },
+  { id: 'CG-0142', name: 'Priya Shetty', role: 'Caregiver', detail: 'Senior Caregiver · Garden Terrace' },
+  { id: 'CG-0118', name: 'Rahul Patil', role: 'Caregiver', detail: 'LPN · Sunrise Pavilion' },
+  { id: 'CG-0156', name: 'Sneha Joshi', role: 'Caregiver', detail: 'RN · Highland Haven' },
+  { id: 'CG-0163', name: 'Ananya Deshmukh', role: 'Caregiver', detail: 'Care Assistant · Orchard Meadow' },
+  { id: 'DR-0031', name: 'Dr. Anita Mehta', role: 'Doctor', detail: 'Consultant Geriatrician' },
+  { id: 'DR-0044', name: 'Dr. Arjun Rao', role: 'Doctor', detail: 'Cardiologist · Visiting' },
+  { id: 'NP-0012', name: 'Deepak Gowda', role: 'Doctor', detail: 'Nurse Practitioner · Skilled Nursing' },
 ];
 
 interface MockRoom {
@@ -131,7 +131,7 @@ export function buildSearchIndex(role: UserRole): SearchResult[] {
 
 /** Suggested queries shown before the user types. */
 export const SEARCH_SUGGESTIONS: Record<UserRole, string[]> = {
-  admin: ['Eleanor Vance', 'Room 215', 'Leave requests', 'Sarah Chen'],
-  caregiver: ['Medication', 'Arthur Pendelton', 'Attendance', 'QR'],
-  doctor: ['Medical records', 'Martha Higgins', 'Prescription', 'Incident'],
+  admin: ['Ananya Sharma', 'Room 215', 'Leave requests', 'Priya Shetty'],
+  caregiver: ['Medication', 'Vikram Hegde', 'Attendance', 'QR'],
+  doctor: ['Medical records', 'Nandini Iyer', 'Prescription', 'Incident'],
 };

@@ -96,7 +96,7 @@ export function RecentFacilityActivity() {
         <div className="mt-4 pt-3 border-t border-haven-border-light flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-haven-slate-500">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-haven-success shrink-0" />
-            <span>Cryptographic audit hashes recorded in compliance with HIPAA § 164.312(b).</span>
+            <span>Cryptographic audit hashes recorded in compliance with Digital Personal Data Protection (DPDP) and clinical audit standards.</span>
           </div>
           <Button
             variant="outline"

@@ -48,7 +48,18 @@ export function resolveNavEntry(role: UserRole, pathname: string): ResolvedNavEn
   }
 
   const hidden = navigation.hidden.find((candidate) => candidate.path === path);
-  return hidden ? { item: hidden } : undefined;
+  if (hidden) return { item: hidden };
+
+  // Match nested resource paths (e.g. /admin/residents/RES-044) to parent nav item
+  if (path.startsWith(`/${role}/residents/`)) {
+    const residentsGroup = navigation.groups.find((g) => g.id === 'people');
+    const residentsItem = residentsGroup?.items.find((i) => i.id === 'residents');
+    if (residentsItem && residentsGroup) {
+      return { item: residentsItem, group: residentsGroup };
+    }
+  }
+
+  return undefined;
 }
 
 /** Converts an absolute item path to a route segment relative to the role prefix. */

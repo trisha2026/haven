@@ -522,7 +522,7 @@ export function DesignSystemPage() {
 
                 <Input
                   label="Emergency Contact"
-                  placeholder="(555) 019-2834"
+                  placeholder="+91 98450 12834"
                   required
                   error="Valid phone format required"
                 />
@@ -555,7 +555,7 @@ export function DesignSystemPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card variant="default" interactive>
                 <CardHeader action={<Badge variant="success">Room 204</Badge>}>
-                  <CardTitle>Eleanor Vance</CardTitle>
+                  <CardTitle>Ananya Sharma</CardTitle>
                   <CardDescription>Sunrise Pavilion • Assisted Living</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -569,7 +569,7 @@ export function DesignSystemPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <span className="text-xs text-haven-slate-500">Primary: Sarah Chen, RN</span>
+                  <span className="text-xs text-haven-slate-500">Primary: Priya Shetty, RN</span>
                   <Button variant="ghost" size="sm" rightIcon={<Eye className="w-3.5 h-3.5" />}>
                     Profile
                   </Button>
@@ -578,7 +578,7 @@ export function DesignSystemPage() {
 
               <Card variant="elevated" interactive>
                 <CardHeader action={<Badge variant="warning" dot>Routine Check</Badge>}>
-                  <CardTitle>Arthur Pendelton</CardTitle>
+                  <CardTitle>Vikram Hegde</CardTitle>
                   <CardDescription>Garden Terrace • Memory Care</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -592,7 +592,7 @@ export function DesignSystemPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <span className="text-xs text-haven-slate-500">Primary: Marcus Davies</span>
+                  <span className="text-xs text-haven-slate-500">Primary: Rahul Patil, LPN</span>
                   <Button variant="ghost" size="sm" rightIcon={<Eye className="w-3.5 h-3.5" />}>
                     Profile
                   </Button>
@@ -601,7 +601,7 @@ export function DesignSystemPage() {
 
               <Card variant="subtle">
                 <CardHeader action={<Badge variant="info">Room 108-A</Badge>}>
-                  <CardTitle>George Washington Carver Jr.</CardTitle>
+                  <CardTitle>Raghavendra Kulkarni</CardTitle>
                   <CardDescription>Orchard Meadow • Skilled Nursing</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -615,7 +615,7 @@ export function DesignSystemPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <span className="text-xs text-haven-slate-500">Primary: David Kim, NP</span>
+                  <span className="text-xs text-haven-slate-500">Primary: Deepak Gowda, NP</span>
                   <Button variant="ghost" size="sm" rightIcon={<Eye className="w-3.5 h-3.5" />}>
                     Profile
                   </Button>
